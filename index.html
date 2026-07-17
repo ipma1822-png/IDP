@@ -3,143 +3,323 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="국제드론순찰대 공식 홈페이지">
+  <meta name="description" content="국제드론순찰대 공식 홈페이지. 회원, 임원, 지도자, 지부, 교육, 자격증 및 통합조회 시스템.">
+  <meta name="theme-color" content="#05070b">
   <title>국제드론순찰대 | International Drone Patrol</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header">
-    <a class="brand" href="#home">
-      <img src="assets/images/logo/IDP008.png" alt="국제드론순찰대 엠블럼">
-      <span><b>국제드론순찰대</b><small>INTERNATIONAL DRONE PATROL</small></span>
-    </a>
-    <button class="menu-btn" aria-label="메뉴 열기">☰</button>
-    <nav>
-      <a href="#about">IDP 소개</a>
-      <a href="#branches">조직·지부</a>
-      <a href="#education">교육</a>
-      <a href="#apply">신청·발급</a>
-      <a href="#search">통합조회</a>
-      <a href="#activity">활동소식</a>
-    </nav>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="국제드론순찰대 홈">
+        <img src="assets/images/logo/IDP008.png" alt="국제드론순찰대 엠블럼">
+        <span>
+          <strong>국제드론순찰대</strong>
+          <small>INTERNATIONAL DRONE PATROL</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+        <b class="sr-only">메뉴 열기</b>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="주요 메뉴">
+        <a href="#about">IDP 소개</a>
+        <a href="#network">조직·지부</a>
+        <a href="#education">교육</a>
+        <a href="#apply">신청·발급</a>
+        <a href="#verification">통합조회</a>
+        <a href="#activities">활동소식</a>
+      </nav>
+
+      <a class="top-cta" href="apply/member.html">대원 가입</a>
+    </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="shade"></div>
-      <div class="hero-content">
-        <p class="gold">GLOBAL SAFETY NETWORK · IDP</p>
-        <h1>기술로 안전을 지키고,<br><span>연대로 세계를 연결합니다</span></h1>
-        <p>드론 기술, 안전교육, 지역봉사와 국제 네트워크를 결합한 글로벌 안전 공동체입니다.</p>
-        <div class="buttons">
-          <a class="btn primary" href="#search">통합조회 바로가기</a>
-          <a class="btn" href="#about">IDP 알아보기</a>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">GLOBAL SAFETY NETWORK · IDP</p>
+          <h1>
+            기술로 안전을 지키고,<br>
+            <span>연대로 세계를 연결합니다</span>
+          </h1>
+          <p class="hero-description">
+            국제드론순찰대는 드론 기술, 안전교육, 지역봉사와 국제 네트워크를 결합한
+            글로벌 안전 공동체입니다.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#verification">통합조회 바로가기</a>
+            <a class="btn btn-outline" href="#about">IDP 알아보기</a>
+          </div>
+
+          <ul class="hero-tags" aria-label="주요 서비스">
+            <li>회원·지도자·임원 조회</li>
+            <li>국내·해외 지부 관리</li>
+            <li>교육·신청·발급 연계</li>
+            <li>QR 진위 확인</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="국제드론순찰대 브랜드 이미지">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-logo-wrap">
+            <img src="assets/images/logo/IDP008.png" alt="국제드론순찰대 공식 엠블럼">
+          </div>
+          <div class="floating-card floating-card-a">
+            <span>GLOBAL</span>
+            <strong>국제 네트워크</strong>
+          </div>
+          <div class="floating-card floating-card-b">
+            <span>SMART</span>
+            <strong>통합 조회 시스템</strong>
+          </div>
+          <div class="floating-card floating-card-c">
+            <span>SAFE</span>
+            <strong>교육·순찰·봉사</strong>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="quick">
-      <a href="search/member-search.html"><b>대원 조회</b><span>회원번호·소속 확인</span></a>
-      <a href="search/branch-search.html"><b>지부 조회</b><span>국가·지역별 확인</span></a>
-      <a href="search/certificate-search.html"><b>자격증 조회</b><span>발급번호·유효상태 확인</span></a>
-      <a href="apply/member.html"><b>가입 신청</b><span>대원·지도자·지부 신청</span></a>
+    <section class="service-bar" aria-label="빠른 서비스">
+      <div class="container service-grid">
+        <a href="search/member-search.html">
+          <span class="service-number">01</span>
+          <div><strong>회원 조회</strong><small>대원·지도자·임원 확인</small></div>
+        </a>
+        <a href="search/branch-search.html">
+          <span class="service-number">02</span>
+          <div><strong>지부 조회</strong><small>국가·지역별 지부 확인</small></div>
+        </a>
+        <a href="search/certificate-search.html">
+          <span class="service-number">03</span>
+          <div><strong>자격증 조회</strong><small>발급번호·유효상태 확인</small></div>
+        </a>
+        <a href="apply/member.html">
+          <span class="service-number">04</span>
+          <div><strong>가입 신청</strong><small>대원·지도자·지부 신청</small></div>
+        </a>
+      </div>
     </section>
 
-    <section class="section two" id="about">
-      <div>
-        <p class="gold">ABOUT IDP</p>
-        <h2>안전을 위한 기술,<br>사람을 위한 국제 연대</h2>
-        <p>국제드론순찰대는 어린이부터 청소년, 성인, 실버 세대까지 누구나 참여할 수 있는 드론 안전·봉사 네트워크입니다.</p>
-      </div>
-      <figure>
-        <img src="assets/images/banners/idp-overview-sections.png" alt="국제드론순찰대 소개">
-        <figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption>
-      </figure>
-    </section>
-
-    <section class="section dark" id="search">
-      <div class="title">
-        <p class="gold">INTEGRATED VERIFICATION</p>
-        <h2>국제드론순찰대 통합조회 시스템</h2>
-        <p>임원, 지도자, 대원, 지부와 자격증 정보를 전 세계 어디서나 확인할 수 있습니다.</p>
-      </div>
-      <div class="search-box">
-        <div>
-          <label for="type">조회 구분</label>
-          <select id="type">
-            <option>대원·회원</option>
-            <option>임원</option>
-            <option>지도자</option>
-            <option>지부</option>
-            <option>자격증</option>
-          </select>
-          <label for="keyword">이름 또는 등록번호</label>
-          <input id="keyword" placeholder="예: IDP-KR-2026-0001">
-          <button id="searchBtn" class="btn primary">조회하기</button>
-          <div id="result"></div>
-          <small>현재는 화면 시연용입니다. 이후 Google Sheets와 Google Apps Script를 연결합니다.</small>
+    <section class="section intro" id="about">
+      <div class="container intro-grid">
+        <div class="section-copy">
+          <p class="section-kicker">ABOUT IDP</p>
+          <h2>안전을 위한 기술,<br>사람을 위한 국제 연대</h2>
+          <p>
+            어린이부터 청소년, 성인, 실버 세대까지 누구나 참여할 수 있습니다.
+            교육, 안전 활동, 행사 지원, 국제 교류와 지부 운영을 하나의 체계로 연결합니다.
+          </p>
+          <div class="mini-stats">
+            <div><strong>ALL AGES</strong><span>전 연령 참여</span></div>
+            <div><strong>GLOBAL</strong><span>국제 네트워크</span></div>
+            <div><strong>ONE SYSTEM</strong><span>통합 운영</span></div>
+          </div>
         </div>
-        <img src="assets/images/banners/idp-integrated-search.png" alt="IDP 통합조회 시스템">
+
+        <figure class="image-card">
+          <img src="assets/images/banners/idp-overview-sections.png" alt="국제드론순찰대 소개, 교육, 순찰, 대원 구성 안내">
+          <figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section" id="branches">
-      <div class="title">
-        <p class="gold">GLOBAL BRANCH NETWORK</p>
-        <h2>국내와 전 세계 지부를 하나의 체계로</h2>
-      </div>
-      <div class="cards">
-        <article><h3>세계지부</h3><p>국가별 지부와 대표자, 승인번호, 활동 상태를 관리합니다.</p></article>
-        <article><h3>국내지부</h3><p>광역본부부터 지역 순찰대까지 단계적으로 운영합니다.</p></article>
-        <article><h3>지도자·임원</h3><p>직책, 임기, 교육 이수와 소속을 확인합니다.</p></article>
-        <article><h3>통합 인물번호</h3><p>IDP·IPMA·WTKF 번호를 동일 인물 기준으로 연결합니다.</p></article>
-      </div>
-    </section>
+    <section class="section dark-section" id="verification">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">INTEGRATED VERIFICATION</p>
+          <h2>국제드론순찰대 통합조회 시스템</h2>
+          <p>등록된 임원, 지도자, 대원, 지부와 자격증 정보를 전 세계 어디서나 확인할 수 있습니다.</p>
+        </div>
 
-    <section class="section dark two" id="education">
-      <figure>
-        <img src="assets/images/banners/idp-overview-sections.png" alt="IDP 교육">
-        <figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption>
-      </figure>
-      <div>
-        <p class="gold">EDUCATION & TRAINING</p>
-        <h2>신청부터 교육, 수료와 발급까지</h2>
-        <p>드론 안전교육, 조종교육, 순찰 실무, 재난 대응, 지도자 교육과 보수교육을 단계적으로 운영합니다.</p>
-        <a class="btn primary" href="pages/education.html">교육과정 보기</a>
-      </div>
-    </section>
+        <div class="verification-layout">
+          <div class="verification-panel">
+            <label for="searchType">조회 구분</label>
+            <select id="searchType">
+              <option value="member">대원·회원</option>
+              <option value="officer">임원</option>
+              <option value="instructor">지도자</option>
+              <option value="branch">지부</option>
+              <option value="certificate">자격증</option>
+            </select>
 
-    <section class="section" id="activity">
-      <div class="title"><p class="gold">PATROL & COMMUNITY</p><h2>안전 활동의 미래 모습을 제시합니다</h2></div>
-      <figure>
-        <img src="assets/images/patrol/idp-patrol-operations.png" alt="IDP 순찰 활동 홍보 이미지">
-        <figcaption>본 이미지는 AI로 생성된 가상의 이미지이며 실제 인물·장소·단체와 관련이 없습니다.</figcaption>
-      </figure>
-    </section>
+            <label for="searchKeyword">이름 또는 등록번호</label>
+            <input id="searchKeyword" type="search" placeholder="예: IDP-KR-2026-0001">
 
-    <section class="section dark two" id="apply">
-      <div>
-        <p class="gold">JOIN IDP</p>
-        <h2>어린이부터 실버까지,<br>누구나 함께할 수 있습니다</h2>
-        <p>대원 가입, 지도자 등록, 임원 등록, 국내·해외 지부 설립과 교육 참가 신청을 한곳에서 처리합니다.</p>
-        <div class="buttons">
-          <a class="btn primary" href="apply/member.html">대원 가입 신청</a>
-          <a class="btn" href="apply/branch.html">지부 설립 신청</a>
+            <button class="btn btn-gold full" id="demoSearchBtn" type="button">조회하기</button>
+
+            <p class="form-note">
+              현재는 화면 시연용입니다. 이후 Google Sheets와 Google Apps Script를 연결합니다.
+            </p>
+            <div class="search-result" id="searchResult" aria-live="polite"></div>
+          </div>
+
+          <figure class="verification-image">
+            <img src="assets/images/banners/idp-integrated-search.png" alt="국제드론순찰대 통합조회 시스템 홍보 이미지">
+          </figure>
         </div>
       </div>
-      <figure>
-        <img src="assets/images/members/idp-member-recruitment.png" alt="IDP 신규 대원 모집">
-        <figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption>
-      </figure>
+    </section>
+
+    <section class="section" id="network">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">GLOBAL BRANCH NETWORK</p>
+          <h2>국내와 전 세계 지부를 하나의 체계로</h2>
+          <p>국가본부, 광역본부, 시·도 지부, 시·군·구 지회와 지역 순찰대를 단계적으로 관리합니다.</p>
+        </div>
+
+        <div class="feature-cards">
+          <article>
+            <span>01</span>
+            <h3>세계지부 관리</h3>
+            <p>국가, 도시, 지부명, 대표자, 승인번호와 활동 상태를 관리합니다.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>국내지부 관리</h3>
+            <p>광역본부부터 지역 순찰대까지 일관된 번호 체계로 운영합니다.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>임원·지도자 관리</h3>
+            <p>직책, 임기, 교육 이수, 소속과 활동 상태를 확인합니다.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>통합 인물번호</h3>
+            <p>IDP·IPMA·WTKF의 단체별 번호를 동일 인물 기준으로 연결합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="education">
+      <div class="container two-column">
+        <figure class="image-card">
+          <img src="assets/images/banners/idp-overview-sections.png" alt="국제드론순찰대 교육 및 훈련 과정">
+          <figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption>
+        </figure>
+
+        <div class="section-copy">
+          <p class="section-kicker">EDUCATION & TRAINING</p>
+          <h2>신청부터 교육, 수료와 발급까지</h2>
+          <p>
+            드론 안전교육, 조종교육, 순찰 실무, 재난 대응, 행사 안전지원,
+            지도자 교육과 보수교육을 단계적으로 운영합니다.
+          </p>
+          <ul class="check-list">
+            <li>온라인·오프라인 교육 신청</li>
+            <li>교육 참가자와 출석 관리</li>
+            <li>수료번호 자동 부여</li>
+            <li>수료증·자격증 QR 조회</li>
+          </ul>
+          <a class="text-link" href="pages/education.html">교육과정 전체 보기 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">PATROL & COMMUNITY</p>
+          <h2>안전 활동의 미래 모습을 제시합니다</h2>
+          <p>야간 도시 순찰, 공원 안전 점검, 행사 안전 지원과 신속 대응을 교육·홍보 콘텐츠로 소개합니다.</p>
+        </div>
+
+        <figure class="wide-image">
+          <img src="assets/images/patrol/idp-patrol-operations.png" alt="국제드론순찰대 순찰 활동 홍보 이미지">
+          <figcaption>본 이미지는 AI로 생성된 가상의 이미지이며 실제 인물·장소·단체와 관련이 없습니다.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section recruitment dark-section" id="apply">
+      <div class="container two-column reverse">
+        <div class="section-copy">
+          <p class="section-kicker">JOIN IDP</p>
+          <h2>어린이부터 실버까지,<br>누구나 함께할 수 있습니다</h2>
+          <p>
+            대원 가입, 지도자 등록, 임원 등록, 국내·해외 지부 설립과
+            교육 참가 신청을 한곳에서 처리합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="apply/member.html">대원 가입 신청</a>
+            <a class="btn btn-outline" href="apply/branch.html">지부 설립 신청</a>
+          </div>
+        </div>
+
+        <figure class="image-card">
+          <img src="assets/images/members/idp-member-recruitment.png" alt="국제드론순찰대 신규 대원 모집">
+          <figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">ONE-STOP PROCESS</p>
+          <h2>IDP 통합 운영 흐름</h2>
+        </div>
+
+        <ol class="process-grid">
+          <li><span>1</span><strong>신청</strong><p>회원·지부·교육·발급 신청</p></li>
+          <li><span>2</span><strong>검토</strong><p>본부 및 관리자 심사</p></li>
+          <li><span>3</span><strong>교육</strong><p>과정 이수 및 결과 등록</p></li>
+          <li><span>4</span><strong>승인·발급</strong><p>고유번호와 QR 문서 발급</p></li>
+          <li><span>5</span><strong>조회</strong><p>전 세계 진위 확인</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact-strip">
+      <div class="container contact-grid">
+        <div><small>전화</small><a href="tel:01044772772">010-4477-2772</a></div>
+        <div><small>이메일</small><a href="mailto:jeonseongkweon@gmail.com">jeonseongkweon@gmail.com</a></div>
+        <div><small>홈페이지</small><a href="https://idp.ai.kr">idp.ai.kr</a></div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p><b>국제드론순찰대 · INTERNATIONAL DRONE PATROL</b></p>
-    <p>010-4477-2772 · jeonseongkweon@gmail.com · idp.ai.kr</p>
-    <p><a href="policies/privacy.html">개인정보처리방침</a> · <a href="policies/ai-image-policy.html">AI 이미지 안내</a></p>
-    <p>© <span id="year"></span> International Drone Patrol. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="assets/images/logo/IDP008.png" alt="">
+        <div>
+          <strong>국제드론순찰대</strong>
+          <span>INTERNATIONAL DRONE PATROL</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="policies/privacy.html">개인정보처리방침</a>
+        <a href="policies/terms.html">이용약관</a>
+        <a href="policies/ai-image-policy.html">AI 이미지 안내</a>
+        <a href="policies/verification-policy.html">조회 정책</a>
+      </div>
+
+      <p>© <span id="year"></span> International Drone Patrol. All rights reserved.</p>
+    </div>
   </footer>
+
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
