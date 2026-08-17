@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>IDP 대원가입 관리 | 국제드론순찰대</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root{--admin-bg:#070a0f;--admin-panel:#0d131d;--admin-panel2:#111925;--admin-line:#2a3342;--admin-gold:#d8a83f;--admin-gold2:#f0d17a;--admin-text:#f3f6fa;--admin-muted:#9ca7b5;--ok:#76d896;--warn:#f0c56b;--bad:#ff8b8b;--info:#8bbcff}
+    body{background:var(--admin-bg);color:var(--admin-text)}
+    .admin-wrap{min-height:100vh;padding:118px 0 70px}.admin-container{width:min(1440px,calc(100% - 32px));margin:auto}
+    .admin-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:24px}.admin-head h1{margin:6px 0 0;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em}.admin-kicker{color:var(--admin-gold2);font-weight:800;letter-spacing:.12em;font-size:.78rem}.admin-head p{color:var(--admin-muted);margin:8px 0 0}.admin-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .panel{background:linear-gradient(180deg,var(--admin-panel),#0a1018);border:1px solid var(--admin-line);border-radius:18px;padding:22px;box-shadow:0 18px 45px rgba(0,0,0,.2)}
+    .login-panel{max-width:520px;margin:70px auto}.login-panel h2{margin-top:0}.field{display:grid;gap:7px;margin:14px 0}.field span{font-weight:750}.field input,.field select{width:100%;box-sizing:border-box;background:#080d14;border:1px solid #344052;border-radius:10px;padding:13px 14px;color:white;font:inherit;outline:none}.field input:focus,.field select:focus{border-color:var(--admin-gold);box-shadow:0 0 0 3px rgba(216,168,63,.12)}
+    .btn-admin{appearance:none;border:1px solid var(--admin-line);background:#121a26;color:#eef2f7;border-radius:10px;padding:11px 15px;font:inherit;font-weight:800;cursor:pointer}.btn-admin:hover{border-color:#556277}.btn-gold-admin{background:linear-gradient(135deg,#f0d17a,#b88a28);color:#111;border-color:#d6ad4d}.btn-danger{color:#ffd1d1;border-color:#6b3636}.btn-small{padding:8px 10px;font-size:.82rem}.btn-admin:disabled{opacity:.5;cursor:not-allowed}
+    .status-line{min-height:24px;margin-top:12px;color:var(--admin-muted)}.status-line.error{color:var(--bad)}.status-line.success{color:var(--ok)}
+    .dashboard{display:none}.dashboard.show{display:block}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:18px}.stat{background:var(--admin-panel);border:1px solid var(--admin-line);border-radius:14px;padding:17px}.stat small{color:var(--admin-muted)}.stat strong{display:block;font-size:1.7rem;margin-top:5px}.stat.pending strong{color:var(--warn)}.stat.approved strong{color:var(--ok)}.stat.hold strong{color:var(--info)}.stat.rejected strong{color:var(--bad)}
+    .toolbar{display:grid;grid-template-columns:1fr 180px 180px auto;gap:10px;margin-bottom:16px}.toolbar input,.toolbar select{background:#080d14;border:1px solid var(--admin-line);border-radius:10px;color:white;padding:11px 13px;font:inherit}
+    .table-card{overflow:hidden;padding:0}.table-scroll{overflow:auto;max-height:68vh}.data-table{width:100%;border-collapse:collapse;min-width:1180px}.data-table th{position:sticky;top:0;z-index:2;background:#121a26;color:#dfe5ed;text-align:left;font-size:.78rem;padding:13px 12px;border-bottom:1px solid var(--admin-line);white-space:nowrap}.data-table td{padding:12px;border-bottom:1px solid #202938;color:#d8dee7;font-size:.88rem;vertical-align:middle}.data-table tr:hover td{background:rgba(216,168,63,.035)}.name-cell strong{display:block;color:white}.name-cell small{color:var(--admin-muted)}
+    .badge{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border-radius:999px;font-size:.75rem;font-weight:850;border:1px solid}.badge.pending{color:#f4d581;border-color:#655329;background:#2a2416}.badge.approved{color:#94e5aa;border-color:#315a3c;background:#14251a}.badge.hold{color:#a8ceff;border-color:#345477;background:#152538}.badge.rejected{color:#ffadad;border-color:#703c3c;background:#2a1717}.badge.unknown{color:#c7d0db;border-color:#485260;background:#171d26}
+    .row-actions{display:flex;gap:6px;flex-wrap:wrap}.empty{padding:50px;text-align:center;color:var(--admin-muted)}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}.modal.show{display:flex}.modal-card{width:min(920px,100%);max-height:92vh;overflow:auto;background:#0d131d;border:1px solid #384354;border-radius:18px;padding:24px}.modal-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:18px}.modal-head h2{margin:0}.close-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--admin-line);background:#111925;color:white;font-size:1.15rem;cursor:pointer}.detail-grid{display:grid;grid-template-columns:180px 1fr 1fr;gap:14px}.photo-box{grid-row:span 5;background:#080d14;border:1px solid var(--admin-line);border-radius:14px;min-height:230px;display:grid;place-items:center;overflow:hidden}.photo-box img{width:100%;height:100%;object-fit:cover}.photo-box span{color:var(--admin-muted);text-align:center;padding:20px}.detail-item{background:#0a1018;border:1px solid #263142;border-radius:11px;padding:12px}.detail-item small{display:block;color:var(--admin-muted);margin-bottom:5px}.detail-item strong,.detail-item div{color:#f1f4f8;word-break:break-word}.detail-wide{grid-column:2/-1}.decision-box{margin-top:18px;padding-top:18px;border-top:1px solid var(--admin-line);display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}.decision-box label{display:grid;gap:7px;font-weight:750}.decision-box input,.decision-box select{background:#080d14;border:1px solid var(--admin-line);border-radius:10px;color:white;padding:12px;font:inherit}
+    .security-note{margin-top:16px;color:#8995a4;font-size:.8rem;line-height:1.65}.security-note b{color:#d4b867}
+    @media(max-width:1050px){.stats{grid-template-columns:repeat(3,1fr)}.toolbar{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:150px 1fr}.detail-item,.detail-wide{grid-column:auto}.photo-box{grid-row:span 6}.decision-box{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.admin-wrap{padding-top:94px}.admin-head{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.photo-box{grid-row:auto;min-height:280px}.detail-wide{grid-column:auto}.decision-box{grid-template-columns:1fr}.modal-card{padding:18px}}
+  </style>
+</head>
+<body>
+<header class="subpage-header"><div class="container header-inner">
+<a class="brand" href="../index.html"><img src="../assets/images/logo/IDP008.png" alt="국제드론순찰대 엠블럼"><span><strong>국제드론순찰대</strong><small>INTERNATIONAL DRONE PATROL</small></span></a>
+<a class="top-cta" href="../index.html">홈페이지</a></div></header>
+<main class="admin-wrap">
+  <div class="admin-container">
+    <section id="loginView" class="panel login-panel">
+      <p class="admin-kicker">IDP ADMINISTRATION</p>
+      <h2>대원가입 관리자 로그인</h2>
+      <p style="color:var(--admin-muted);line-height:1.7">국제드론순찰대 관리자 전용 화면입니다. 승인된 관리자 계정으로 로그인해 주세요.</p>
+      <form id="loginForm">
+        <label class="field"><span>관리자 이메일</span><input id="loginEmail" type="email" autocomplete="username" required placeholder="admin@example.com"></label>
+        <label class="field"><span>비밀번호</span><input id="loginPassword" type="password" autocomplete="current-password" required></label>
+        <button class="btn-admin btn-gold-admin" type="submit">관리자 로그인</button>
+        <p id="loginStatus" class="status-line"></p>
+      </form>
+      <p class="security-note"><b>보안 안내</b> · 이 페이지에 관리자 비밀번호는 저장되지 않습니다. 로그인 인증은 Supabase Auth를 통해 처리됩니다.</p>
+    </section>
+
+    <section id="dashboard" class="dashboard">
+      <div class="admin-head">
+        <div><p class="admin-kicker">IDP MEMBER APPLICATIONS</p><h1>대원가입 신청 관리</h1><p>신청자 확인, 심사상태 변경과 대원번호 발급을 관리합니다.</p></div>
+        <div class="admin-actions"><button id="refreshBtn" class="btn-admin">새로고침</button><button id="logoutBtn" class="btn-admin btn-danger">로그아웃</button></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><small>전체 신청</small><strong id="statAll">0</strong></div>
+        <div class="stat pending"><small>심사중</small><strong id="statPending">0</strong></div>
+        <div class="stat approved"><small>승인</small><strong id="statApproved">0</strong></div>
+        <div class="stat hold"><small>보류</small><strong id="statHold">0</strong></div>
+        <div class="stat rejected"><small>반려</small><strong id="statRejected">0</strong></div>
+      </div>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="이름 · 전화번호 · 이메일 · 추천인 검색">
+        <select id="statusFilter"><option value="">모든 상태</option><option value="pending">심사중</option><option value="approved">승인</option><option value="hold">보류</option><option value="rejected">반려</option></select>
+        <select id="regionFilter"><option value="">모든 지역</option></select>
+        <button id="csvBtn" class="btn-admin">CSV 내보내기</button>
+      </div>
+      <section class="panel table-card">
+        <div class="table-scroll"><table class="data-table"><thead><tr><th>접수일</th><th>신청자</th><th>지역</th><th>연락처</th><th>드론자격</th><th>가입경로</th><th>추천인</th><th>상태</th><th>대원번호</th><th>관리</th></tr></thead><tbody id="appTableBody"></tbody></table><div id="emptyState" class="empty" hidden>조건에 맞는 신청자가 없습니다.</div></div>
+      </section>
+      <p id="dashboardStatus" class="status-line"></p>
+    </section>
+  </div>
+</main>
+
+<div id="detailModal" class="modal" aria-hidden="true"><div class="modal-card">
+  <div class="modal-head"><div><p class="admin-kicker">APPLICATION DETAIL</p><h2 id="modalTitle">신청자 상세정보</h2></div><button id="closeModal" class="close-btn" aria-label="닫기">×</button></div>
+  <div id="detailGrid" class="detail-grid"></div>
+  <div class="decision-box">
+    <label>심사상태<select id="decisionStatus"><option value="pending">심사중</option><option value="approved">승인</option><option value="hold">보류</option><option value="rejected">반려</option></select></label>
+    <label>대원번호<input id="memberNumber" type="text" placeholder="승인 시 자동 발급"></label>
+    <button id="saveDecision" class="btn-admin btn-gold-admin">심사결과 저장</button>
+  </div>
+  <p id="modalStatus" class="status-line"></p>
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const SUPABASE_URL='https://ojxarsfaewehwjidwgac.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
+  const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+  const $=s=>document.querySelector(s);
+  let rows=[]; let current=null;
+  const statusLabel={pending:'심사중',approved:'승인',hold:'보류',rejected:'반려'};
+
+  function setText(el,msg,type=''){el.textContent=msg||'';el.className='status-line '+type}
+  function esc(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+  function fmtDate(v){if(!v)return '-';const d=new Date(v);return isNaN(d)?v:d.toLocaleString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}
+  function badge(s){const key=statusLabel[s]?s:'unknown';return `<span class="badge ${key}">${statusLabel[s]||esc(s||'미지정')}</span>`}
+  function autoMemberNumber(r){const year=new Date(r.created_at||Date.now()).getFullYear();return `IDP-KR-${year}-${String(r.id).padStart(5,'0')}`}
+
+  async function checkSession(){const {data}=await db.auth.getSession();if(data.session){showDashboard();await loadRows()}else{showLogin()}}
+  function showLogin(){$('#loginView').style.display='block';$('#dashboard').classList.remove('show')}
+  function showDashboard(){$('#loginView').style.display='none';$('#dashboard').classList.add('show')}
+
+  $('#loginForm').addEventListener('submit',async e=>{e.preventDefault();setText($('#loginStatus'),'로그인 확인 중...');const email=$('#loginEmail').value.trim();const password=$('#loginPassword').value;const {error}=await db.auth.signInWithPassword({email,password});if(error){setText($('#loginStatus'),'로그인에 실패했습니다. 관리자 계정과 비밀번호를 확인해 주세요.','error');return}setText($('#loginStatus'),'로그인되었습니다.','success');showDashboard();await loadRows()});
+  $('#logoutBtn').addEventListener('click',async()=>{await db.auth.signOut();rows=[];render();showLogin()});
+  $('#refreshBtn').addEventListener('click',loadRows);
+
+  async function loadRows(){setText($('#dashboardStatus'),'신청자 정보를 불러오는 중입니다...');const {data,error}=await db.from('idp_member_applications').select('*').order('created_at',{ascending:false});if(error){console.error(error);setText($('#dashboardStatus'),'신청자 정보를 불러올 권한이 없습니다. 관리자 RLS 설정을 확인해 주세요.','error');return}rows=data||[];populateRegions();render();setText($('#dashboardStatus'),`총 ${rows.length}건의 신청정보를 불러왔습니다.`,'success')}
+  function populateRegions(){const select=$('#regionFilter'),cur=select.value;const regions=[...new Set(rows.map(r=>r.region).filter(Boolean))].sort();select.innerHTML='<option value="">모든 지역</option>'+regions.map(r=>`<option>${esc(r)}</option>`).join('');select.value=cur}
+  function filtered(){const q=$('#searchInput').value.trim().toLowerCase(),s=$('#statusFilter').value,region=$('#regionFilter').value;return rows.filter(r=>{const hay=[r.name,r.phone,r.email,r.referrer,r.member_number].join(' ').toLowerCase();return(!q||hay.includes(q))&&(!s||r.status===s)&&(!region||r.region===region)})}
+  function render(){const body=$('#appTableBody'),list=filtered();$('#statAll').textContent=rows.length;$('#statPending').textContent=rows.filter(r=>r.status==='pending').length;$('#statApproved').textContent=rows.filter(r=>r.status==='approved').length;$('#statHold').textContent=rows.filter(r=>r.status==='hold').length;$('#statRejected').textContent=rows.filter(r=>r.status==='rejected').length;$('#emptyState').hidden=list.length>0;body.innerHTML=list.map(r=>`<tr><td>${esc(fmtDate(r.created_at))}</td><td class="name-cell"><strong>${esc(r.name)}</strong><small>${esc(r.email||'')}</small></td><td>${esc(r.region||'-')}</td><td>${esc(r.phone||'-')}</td><td>${esc(r.drone_license||'-')}</td><td>${esc(r.join_source||'-')}</td><td>${esc(r.referrer||'-')}</td><td>${badge(r.status)}</td><td>${esc(r.member_number||'-')}</td><td><div class="row-actions"><button class="btn-admin btn-small" data-detail="${r.id}">상세</button>${r.status!=='approved'?`<button class="btn-admin btn-small btn-gold-admin" data-approve="${r.id}">승인</button>`:''}</div></td></tr>`).join('')}
+  ['searchInput','statusFilter','regionFilter'].forEach(id=>$('#'+id).addEventListener(id==='searchInput'?'input':'change',render));
+  $('#appTableBody').addEventListener('click',e=>{const detail=e.target.closest('[data-detail]'),approve=e.target.closest('[data-approve]');if(detail)openDetail(Number(detail.dataset.detail));if(approve)quickApprove(Number(approve.dataset.approve))});
+
+  async function getSignedPhoto(path){if(!path)return null;const {data,error}=await db.storage.from('idp-member-photos').createSignedUrl(path,600);return error?null:data.signedUrl}
+  async function openDetail(id){current=rows.find(r=>r.id===id);if(!current)return;$('#detailModal').classList.add('show');$('#detailModal').setAttribute('aria-hidden','false');$('#modalTitle').textContent=`${current.name} 신청정보`;$('#decisionStatus').value=current.status||'pending';$('#memberNumber').value=current.member_number||'';setText($('#modalStatus'),'사진과 상세정보를 불러오는 중입니다...');const photo=await getSignedPhoto(current.photo_url);$('#detailGrid').innerHTML=`<div class="photo-box">${photo?`<img src="${esc(photo)}" alt="${esc(current.name)} 신청자 사진">`:'<span>등록된 사진을 불러올 수 없습니다.</span>'}</div><div class="detail-item"><small>이름</small><strong>${esc(current.name)}</strong></div><div class="detail-item"><small>나이</small><strong>${esc(current.age)}</strong></div><div class="detail-item"><small>지역</small><strong>${esc(current.region)}</strong></div><div class="detail-item"><small>핸드폰</small><strong>${esc(current.phone)}</strong></div><div class="detail-item"><small>이메일</small><strong>${esc(current.email)}</strong></div><div class="detail-item"><small>드론 자격증</small><strong>${esc(current.drone_license||'-')}</strong></div><div class="detail-item"><small>자격증 상세</small><div>${esc(current.drone_license_detail||'-')}</div></div><div class="detail-item detail-wide"><small>타단체 가입현황</small><div>${esc(current.other_organizations||'-')}</div></div><div class="detail-item"><small>가입경로</small><strong>${esc(current.join_source||'-')}</strong></div><div class="detail-item"><small>추천인</small><strong>${esc(current.referrer||'-')}</strong></div><div class="detail-item detail-wide"><small>접수일</small><div>${esc(fmtDate(current.created_at))}</div></div>`;setText($('#modalStatus'),'')}
+  function closeModal(){$('#detailModal').classList.remove('show');$('#detailModal').setAttribute('aria-hidden','true');current=null}
+  $('#closeModal').addEventListener('click',closeModal);$('#detailModal').addEventListener('click',e=>{if(e.target.id==='detailModal')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+  $('#decisionStatus').addEventListener('change',()=>{if(current&&$('#decisionStatus').value==='approved'&&!$('#memberNumber').value.trim())$('#memberNumber').value=autoMemberNumber(current)});
+  $('#saveDecision').addEventListener('click',async()=>{if(!current)return;let status=$('#decisionStatus').value,member=$('#memberNumber').value.trim();if(status==='approved'&&!member){member=autoMemberNumber(current);$('#memberNumber').value=member}setText($('#modalStatus'),'심사결과를 저장하고 있습니다...');const {data,error}=await db.from('idp_member_applications').update({status,member_number:member||null}).eq('id',current.id).select().single();if(error){console.error(error);setText($('#modalStatus'),'저장할 권한이 없거나 처리 중 오류가 발생했습니다.','error');return}const idx=rows.findIndex(r=>r.id===current.id);if(idx>=0)rows[idx]=data;current=data;render();setText($('#modalStatus'),'심사결과가 저장되었습니다.','success')});
+  async function quickApprove(id){const r=rows.find(x=>x.id===id);if(!r||!confirm(`${r.name} 신청자를 승인하고 대원번호를 발급하시겠습니까?`))return;const member=r.member_number||autoMemberNumber(r);const {data,error}=await db.from('idp_member_applications').update({status:'approved',member_number:member}).eq('id',id).select().single();if(error){alert('승인 처리 권한을 확인해 주세요.');console.error(error);return}rows[rows.findIndex(x=>x.id===id)]=data;render()}
+
+  $('#csvBtn').addEventListener('click',()=>{const list=filtered(),heads=['접수일','이름','나이','지역','핸드폰','이메일','드론자격','자격상세','타단체','가입경로','추천인','상태','대원번호'];const vals=list.map(r=>[fmtDate(r.created_at),r.name,r.age,r.region,r.phone,r.email,r.drone_license,r.drone_license_detail,r.other_organizations,r.join_source,r.referrer,statusLabel[r.status]||r.status,r.member_number]);const csv='\uFEFF'+[heads,...vals].map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`IDP-대원가입-${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(a.href)});
+  db.auth.onAuthStateChange((_event,session)=>{if(!session)showLogin()});checkSession();
+})();
+</script>
+</body>
+</html>
