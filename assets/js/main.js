@@ -41,7 +41,7 @@ searchBtn?.addEventListener('click',()=>{
     return;
   }
 
-  searchResult.innerHTML=`<strong>${labels[type]||'통합'} 조회 준비 완료</strong><br><span>입력값: ${escapeHtml(keyword)}</span><br><small>Google Apps Script 연결 후 실제 데이터가 표시됩니다.</small>`;
+  searchResult.innerHTML=`<strong>${labels[type]||'통합'} 조회 준비 완료</strong><br><span>입력값: ${escapeHtml(keyword)}</span><br><small>등록 정보는 공식 조회 기준에 따라 확인됩니다.</small>`;
   searchResult.classList.add('show');
 });
 
@@ -54,3 +54,6 @@ function escapeHtml(value){
     "'":'&#039;'
   }[char]));
 }
+
+// Mobile mega menu
+document.querySelectorAll('.nav-label').forEach(label=>label.addEventListener('click',()=>{if(window.innerWidth<=1080){label.closest('.nav-item')?.classList.toggle('open')}}));

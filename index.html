@@ -107,9 +107,11 @@
     .to-top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--gold2);opacity:0;pointer-events:none}
     .to-top.show{opacity:1;pointer-events:auto}
 
+
+    .nav-item{position:relative;display:flex;align-items:center}.nav-label{display:flex;align-items:center;gap:6px;font-size:.94rem;color:#e6e9ed;cursor:pointer;padding:30px 0}.nav-label::after{content:"⌄";font-size:.72rem;color:var(--gold)}.mega-menu{position:absolute;top:76px;left:50%;transform:translateX(-50%) translateY(8px);width:340px;padding:18px;background:rgba(9,14,22,.98);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;pointer-events:none;transition:.2s;display:grid;gap:5px}.nav-item:hover .mega-menu,.nav-item:focus-within .mega-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}.mega-menu a{display:block;padding:10px 12px;border-radius:9px;color:#dbe1e8;font-size:.88rem}.mega-menu a:hover{background:rgba(216,168,63,.09);color:var(--gold2)}.mega-menu strong{padding:4px 12px 7px;color:var(--gold2);font-size:.72rem;letter-spacing:.08em}
     @media(max-width:1080px){
       .main-nav,.top-cta{display:none}.menu-toggle{display:block}
-      .main-nav.open{display:grid;position:absolute;top:84px;left:0;right:0;padding:24px 30px;background:#080d14;border-bottom:1px solid var(--line)}
+      .main-nav.open{display:grid;position:absolute;top:84px;left:0;right:0;padding:24px 30px;background:#080d14;border-bottom:1px solid var(--line)} .main-nav.open .nav-item{display:block}.main-nav.open .nav-label{padding:8px 0}.main-nav.open .mega-menu{position:static;transform:none;width:auto;opacity:1;visibility:visible;pointer-events:auto;margin:4px 0 12px}
       .hero-layout{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-description{margin:auto}.hero-actions,.hero-tags{justify-content:center}
       .service-grid,.feature-cards{grid-template-columns:repeat(2,1fr)}
       .intro-grid,.two-column,.verification-layout{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(3,1fr)}
@@ -133,10 +135,13 @@
         <span><strong>국제드론순찰대</strong><small>INTERNATIONAL DRONE PATROL</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="main-nav">
-        <a href="#about">IDP 소개</a><a href="#network">조직·지부</a><a href="#education">교육</a>
-        <a href="#apply">신청·발급</a><a href="#verification">통합조회</a><a href="#activities">활동소식</a>
-      </nav>
+      <nav class="main-nav" aria-label="주요 메뉴">
+<div class="nav-item"><span class="nav-label">IDP 소개</span><div class="mega-menu"><strong>ABOUT IDP</strong><a href="pages/about.html">국제드론순찰대 소개</a><a href="pages/organization.html">조직 안내</a><a href="pages/partners.html">협력기관</a></div></div>
+<div class="nav-item"><span class="nav-label">조직·지부</span><div class="mega-menu"><strong>NETWORK</strong><a href="pages/korea-branches.html">국내지부</a><a href="pages/global-branches.html">세계지부</a><a href="search/branch-search.html">지부 조회</a><a href="apply/branch.html">지부 설립 신청</a></div></div>
+<div class="nav-item"><span class="nav-label">교육·활동</span><div class="mega-menu"><strong>TRAINING & ACTIVITY</strong><a href="pages/education.html">교육과정</a><a href="apply/education.html">교육 신청</a><a href="pages/activities.html">활동소식</a></div></div>
+<div class="nav-item"><span class="nav-label">참여·신청</span><div class="mega-menu"><strong>JOIN IDP</strong><a href="apply/member.html">대원 가입</a><a href="apply/instructor.html">지도자 등록</a><a href="apply/officer.html">임원 등록</a><a href="apply/certificate.html">자격·발급 안내</a></div></div>
+<div class="nav-item"><span class="nav-label">조회서비스</span><div class="mega-menu"><strong>VERIFICATION</strong><a href="search/member-search.html">대원 조회</a><a href="search/instructor-search.html">지도자 조회</a><a href="search/officer-search.html">임원 조회</a><a href="search/certificate-search.html">자격증 조회</a></div></div>
+</nav>
       <a class="top-cta" href="apply/member.html">대원 가입</a>
     </div>
   </header>
@@ -196,7 +201,7 @@
             <label for="searchKeyword">이름 또는 등록번호</label>
             <input id="searchKeyword" type="search" placeholder="예: IDP-KR-2026-0001">
             <button class="btn btn-gold full" id="demoSearchBtn" type="button">조회하기</button>
-            <p class="form-note">현재는 화면 시연용입니다. 이후 Google Sheets와 Google Apps Script를 연결합니다.</p>
+            <p class="form-note">등록번호 또는 이름을 입력하여 등록 정보를 확인할 수 있습니다.</p>
             <div class="search-result" id="searchResult"></div>
           </div>
           <figure class="verification-image"><img src="assets/images/banners/idp-integrated-search.png" alt="통합조회 시스템"></figure>
@@ -240,7 +245,7 @@
     <section class="process">
       <div class="container">
         <div class="section-heading"><p class="section-kicker">ONE-STOP PROCESS</p><h2>IDP 통합 운영 흐름</h2></div>
-        <ol class="process-grid"><li><span>1</span><strong>신청</strong><p>회원·지부·교육·발급 신청</p></li><li><span>2</span><strong>검토</strong><p>본부 및 관리자 심사</p></li><li><span>3</span><strong>교육</strong><p>과정 이수 및 결과 등록</p></li><li><span>4</span><strong>승인·발급</strong><p>고유번호와 QR 문서 발급</p></li><li><span>5</span><strong>조회</strong><p>전 세계 진위 확인</p></li></ol>
+        <ol class="process-grid"><li><span>1</span><strong>신청</strong><p>회원·지부·교육·발급 신청</p></li><li><span>2</span><strong>검토</strong><p>본부 확인 및 심사</p></li><li><span>3</span><strong>교육</strong><p>과정 이수 및 결과 등록</p></li><li><span>4</span><strong>승인·발급</strong><p>고유번호와 QR 문서 발급</p></li><li><span>5</span><strong>조회</strong><p>전 세계 진위 확인</p></li></ol>
       </div>
     </section>
 
@@ -263,7 +268,7 @@
       const keyword=document.querySelector('#searchKeyword').value.trim();
       const result=document.querySelector('#searchResult');
       result.classList.add('show');
-      result.innerHTML=keyword?`<strong>조회 준비 완료</strong><br>${keyword}<br><small>Google Apps Script 연결 후 실제 데이터가 표시됩니다.</small>`:'이름 또는 등록번호를 입력해 주세요.';
+      result.innerHTML=keyword?`<strong>조회 요청</strong><br>${keyword}<br><small>등록 정보는 공식 조회 페이지에서 확인해 주세요.</small>`:'이름 또는 등록번호를 입력해 주세요.';
     });
   </script>
 </body>
