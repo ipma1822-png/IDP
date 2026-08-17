@@ -10,6 +10,8 @@
     .sub-card { max-width: 900px; margin: auto; padding: 40px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
     .sub-card h1 { font-size: clamp(2rem,5vw,3.6rem); margin-top: 0; }
     .sub-card p { color: var(--muted); }
+
+    .join-card{max-width:1040px}.lead{font-size:1.08rem;line-height:1.8}.join-form{margin-top:34px}.form-section{padding:30px 0;border-top:1px solid var(--line)}.form-section-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}.form-section-head>span{flex:0 0 42px;height:42px;border:1px solid #b99339;border-radius:50%;display:grid;place-items:center;color:#e1c067;font-weight:800}.form-section-head h2{margin:0 0 6px;font-size:1.35rem}.form-section-head p{margin:0;font-size:.94rem}.form-grid{display:grid;gap:16px}.form-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.field{display:flex;flex-direction:column;gap:8px}.field.wide{grid-column:1/-1}.field>span{font-weight:700;color:#e9edf5}.field b,.consent-check b{color:#e3bd55}.field input,.field select,.field textarea{width:100%;box-sizing:border-box;background:#090d14;border:1px solid #303747;color:#f5f7fb;border-radius:10px;padding:14px 15px;font:inherit;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#cba744;box-shadow:0 0 0 3px rgba(203,167,68,.12)}.field textarea{resize:vertical}.upload-box{min-height:118px;border:1px dashed #7f6a35;border-radius:14px;background:#0b1018;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;cursor:pointer;text-align:center;padding:20px}.upload-box input{max-width:290px;color:#c9d0db}.upload-box strong{color:#e5c76d}.upload-box small{color:var(--muted)}.choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.choice-grid.routes{grid-template-columns:repeat(5,minmax(0,1fr))}.choice-grid.two-choice{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px}.choice-grid label{position:relative;cursor:pointer}.choice-grid input{position:absolute;opacity:0;pointer-events:none}.choice-grid span{min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid #303747;border-radius:10px;background:#0b1018;color:#cbd2dc;padding:10px}.choice-grid input:checked+span{border-color:#cba744;color:#f4d77e;background:rgba(203,167,68,.09)}.top-gap{margin-top:16px}.consent-box{background:#0b1018;border:1px solid #303747;border-radius:10px;padding:18px;color:#aeb7c4;line-height:1.75;font-size:.92rem}.consent-check{display:flex;gap:10px;align-items:center;margin-top:16px;color:#e7ebf1;font-weight:700}.consent-check input{width:18px;height:18px;accent-color:#cba744}.form-actions{display:flex;gap:12px;align-items:center;margin-top:26px;flex-wrap:wrap}.submit-btn{border:0;cursor:pointer;font:inherit;font-weight:800}.btn-outline{border:1px solid #394151;color:#d7dde7;background:transparent}.form-status{margin-top:14px;min-height:24px}.form-status.ready{color:#e5c76d}.form-status.error{color:#ff9f9f}@media(max-width:760px){.sub-card{padding:26px 20px}.form-grid.two,.choice-grid,.choice-grid.routes,.choice-grid.two-choice{grid-template-columns:1fr}.field.wide{grid-column:auto}.form-section-head>span{flex-basis:36px;height:36px}.form-actions .btn{width:100%;text-align:center;justify-content:center}}
   </style>
 </head>
 <body><header class="subpage-header"><div class="container header-inner">
@@ -24,14 +26,99 @@
 </nav><a class="top-cta" href="../apply/member.html">대원 가입</a></div></header>
   <main class="subpage">
     <div class="container">
-      <section class="sub-card">
+      <section class="sub-card join-card">
         <p class="section-kicker">INTERNATIONAL DRONE PATROL</p>
         <h1>대원 가입 신청</h1>
-        <p>어린이, 청소년, 성인, 실버 대원의 신규 가입을 신청합니다.</p>
-        <div class="public-note">국제드론순찰대의 활동 취지에 공감하고 안전·봉사 활동에 함께할 대원 참여 안내입니다.</div>
-        <a class="btn btn-gold" href="../index.html">메인으로 돌아가기</a>
+        <p class="lead">국제드론순찰대와 함께 안전·봉사·드론 활동에 참여할 대원을 모집합니다.</p>
+        <div class="public-note">신청서를 작성해 주시면 확인 후 대원 등록 절차를 안내해 드립니다. 필수 항목은 정확하게 입력해 주세요.</div>
+
+        <form class="join-form" id="memberApplicationForm" enctype="multipart/form-data" novalidate>
+          <div class="form-section">
+            <div class="form-section-head"><span>01</span><div><h2>기본정보</h2><p>대원 등록과 연락을 위한 기본 정보를 입력해 주세요.</p></div></div>
+            <div class="form-grid two">
+              <label class="field"><span>이름 <b>*</b></span><input type="text" name="name" autocomplete="name" required placeholder="홍길동"></label>
+              <label class="field"><span>나이 <b>*</b></span><input type="number" name="age" min="5" max="100" required placeholder="예: 35"></label>
+              <label class="field"><span>지역 <b>*</b></span><select name="region" required><option value="">지역 선택</option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option><option>해외</option></select></label>
+              <label class="field"><span>핸드폰번호 <b>*</b></span><input type="tel" name="phone" autocomplete="tel" required placeholder="010-0000-0000"></label>
+              <label class="field wide"><span>이메일 <b>*</b></span><input type="email" name="email" autocomplete="email" required placeholder="name@example.com"></label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-head"><span>02</span><div><h2>사진</h2><p>대원 확인 및 향후 대원증 발급에 사용할 수 있는 본인 사진을 등록해 주세요.</p></div></div>
+            <label class="upload-box">
+              <input type="file" name="photo" accept="image/jpeg,image/png,image/webp">
+              <strong>사진 선택</strong><small>정면 사진을 권장합니다 · JPG, PNG, WEBP</small>
+            </label>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-head"><span>03</span><div><h2>드론 자격증 보유현황</h2><p>현재 보유 중인 드론 관련 자격이나 교육 이력을 알려주세요.</p></div></div>
+            <div class="choice-grid">
+              <label><input type="radio" name="drone_license_status" value="없음" checked><span>보유하지 않음</span></label>
+              <label><input type="radio" name="drone_license_status" value="보유"><span>자격증 보유</span></label>
+              <label><input type="radio" name="drone_license_status" value="교육중"><span>교육·취득 준비 중</span></label>
+            </div>
+            <label class="field top-gap"><span>자격증명·급수·발급기관</span><input type="text" name="drone_license_detail" placeholder="예: 초경량비행장치 조종자 1종 / 발급기관"></label>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-head"><span>04</span><div><h2>타단체 가입현황</h2><p>현재 활동 중인 드론·안전·봉사·무도·사회단체가 있다면 적어주세요.</p></div></div>
+            <div class="choice-grid two-choice">
+              <label><input type="radio" name="other_org_status" value="없음" checked><span>없음</span></label>
+              <label><input type="radio" name="other_org_status" value="있음"><span>가입 단체 있음</span></label>
+            </div>
+            <label class="field top-gap"><span>단체명 및 활동 내용</span><textarea name="other_org_detail" rows="3" placeholder="예: ○○드론협회 회원 / 지역 봉사활동 참여"></textarea></label>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-head"><span>05</span><div><h2>가입경로</h2><p>국제드론순찰대를 알게 된 경로를 선택해 주세요.</p></div></div>
+            <div class="choice-grid routes">
+              <label><input type="radio" name="join_route" value="SNS" required><span>SNS</span></label>
+              <label><input type="radio" name="join_route" value="인터넷검색"><span>인터넷 검색</span></label>
+              <label><input type="radio" name="join_route" value="지인소개"><span>지인 소개</span></label>
+              <label><input type="radio" name="join_route" value="행사교육"><span>행사·교육</span></label>
+              <label><input type="radio" name="join_route" value="기타"><span>기타</span></label>
+            </div>
+            <div class="form-grid two top-gap">
+              <label class="field"><span>추천인</span><input type="text" name="referrer" placeholder="추천인이 있는 경우 이름 입력"></label>
+              <label class="field"><span>기타 가입경로</span><input type="text" name="join_route_detail" placeholder="필요한 경우 입력"></label>
+            </div>
+          </div>
+
+          <div class="form-section consent-section">
+            <div class="form-section-head"><span>06</span><div><h2>개인정보 수집·이용 동의</h2><p>대원 가입 심사와 등록 안내를 위해 필요한 최소한의 정보를 수집합니다.</p></div></div>
+            <div class="consent-box">이름, 나이, 지역, 연락처, 이메일 및 신청자가 선택적으로 제공한 사진·자격·활동 정보를 대원 가입 확인과 연락 목적으로 이용합니다. 관련 법령과 내부 기준에 따라 안전하게 관리합니다.</div>
+            <label class="consent-check"><input type="checkbox" name="privacy_agree" required><span>개인정보 수집·이용에 동의합니다. <b>*</b></span></label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-gold submit-btn" type="submit">대원 가입 신청</button>
+            <a class="btn btn-outline" href="../index.html">메인으로 돌아가기</a>
+          </div>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
       </section>
     </div>
   </main>
-<script src="../assets/js/main.js"></script></body>
+<script src="../assets/js/main.js"></script>
+<script>
+(function(){
+  const form=document.getElementById('memberApplicationForm');
+  const status=document.getElementById('formStatus');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      status.className='form-status error';
+      status.textContent='필수 항목을 확인해 주세요.';
+      return;
+    }
+    status.className='form-status ready';
+    status.textContent='신청서 작성이 완료되었습니다. 온라인 접수 기능이 활성화되면 이 화면에서 바로 접수할 수 있습니다.';
+  });
+})();
+</script>
+</body>
 </html>
