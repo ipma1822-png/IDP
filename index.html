@@ -6,6 +6,7 @@
   <meta name="description" content="국제드론순찰대 공식 홈페이지">
   <meta name="theme-color" content="#05070b">
   <title>국제드론순찰대 | International Drone Patrol</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     :root{
       --bg:#05070b;--bg2:#0a0f17;--panel:#101720;--gold:#d8a83f;
@@ -136,15 +137,16 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="주요 메뉴">
-<div class="nav-item"><span class="nav-label">IDP 소개</span><div class="mega-menu"><strong>ABOUT IDP</strong><a href="pages/about.html">국제드론순찰대 소개</a><a href="pages/organization.html">조직 안내</a><a href="pages/partners.html">협력기관</a></div></div>
-<div class="nav-item"><span class="nav-label">조직·지부</span><div class="mega-menu"><strong>NETWORK</strong><a href="pages/korea-branches.html">국내지부</a><a href="pages/global-branches.html">세계지부</a><a href="search/branch-search.html">지부 조회</a><a href="apply/branch.html">지부 설립 신청</a></div></div>
-<div class="nav-item"><span class="nav-label">교육·활동</span><div class="mega-menu"><strong>TRAINING & ACTIVITY</strong><a href="pages/education.html">교육과정</a><a href="apply/education.html">교육 신청</a><a href="pages/activities.html">활동소식</a></div></div>
+<div class="nav-item"><span class="nav-label">IDP 소개</span><div class="mega-menu"><strong>ABOUT IDP</strong><a href="pages/about.html">국제드론순찰대 소개</a><a href="pages/mission.html">IDP 6대 공익미션</a><a href="pages/organization.html">국제 조직도</a><a href="pages/partners.html">협력기관</a></div></div>
+<div class="nav-item"><span class="nav-label">조직·지부</span><div class="mega-menu"><strong>GLOBAL NETWORK</strong><a href="pages/korea-branches.html">대한민국 17개 시·도</a><a href="pages/global-branches.html">글로벌 네트워크</a><a href="search/branch-search.html">지부 조회</a><a href="apply/branch.html">지부 설립 신청</a></div></div>
+<div class="nav-item"><span class="nav-label">교육·미션</span><div class="mega-menu"><strong>TRAINING & MISSION</strong><a href="pages/education.html">6단계 교육과정</a><a href="pages/mission.html">현장 공익미션</a><a href="pages/junior.html">IDP JUNIOR</a><a href="apply/education.html">교육 신청</a><a href="pages/activities.html">활동·미디어</a></div></div>
 <div class="nav-item"><span class="nav-label">참여·신청</span><div class="mega-menu"><strong>JOIN IDP</strong><a href="https://acts.pe.kr/member-center/signup.html">통합 대원 가입</a><a href="https://acts.pe.kr/member-center/login.html">회원 로그인</a><a href="apply/instructor.html">지도자 등록</a><a href="apply/officer.html">임원 등록</a><a href="apply/certificate.html">자격·발급 안내</a></div></div>
 <div class="nav-item"><span class="nav-label">조회서비스</span><div class="mega-menu"><strong>VERIFICATION</strong><a href="search/member-search.html">대원 조회</a><a href="search/instructor-search.html">지도자 조회</a><a href="search/officer-search.html">임원 조회</a><a href="search/certificate-search.html">자격증 조회</a></div></div>
 </nav>
       <a class="top-cta" href="https://acts.pe.kr/member-center/signup.html">통합 대원 가입</a>
     </div>
   </header>
+  <nav class="idp-mobile-strip" aria-label="모바일 핵심 메뉴"><a href="#missions">미션</a><a href="#korea-network">전국지부</a><a href="#global-network">세계조직</a><a href="#education">교육</a><a href="#junior">주니어</a><a href="#activities">활동</a><a href="#verification">조회</a><a href="#apply">가입</a></nav>
 
   <main>
     <section class="hero" id="home">
@@ -153,12 +155,12 @@
         <div class="hero-copy">
           <p class="eyebrow">GLOBAL SAFETY NETWORK · IDP</p>
           <h1>기술로 안전을 지키고,<br><span>연대로 세계를 연결합니다</span></h1>
-          <p class="hero-description">국제드론순찰대는 드론 기술, 안전교육, 지역봉사와 국제 네트워크를 결합한 글로벌 안전 공동체입니다.</p>
+          <p class="hero-description">국제드론순찰대(IDP)는 드론 기술과 시민 참여를 연결하여 실종자 수색, 산불·하천 감시, 학교·행사 안전, 재난 지원을 수행하는 국제 공익안전 네트워크입니다.</p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="#verification">통합조회 바로가기</a>
-            <a class="btn btn-outline" href="#about">IDP 알아보기</a>
+            <a class="btn btn-gold" href="#missions">6대 공익미션 보기</a>
+            <a class="btn btn-outline" href="apply/member.html">IDP 대원 참여하기</a>
           </div>
-          <ul class="hero-tags"><li>회원·지도자·임원 조회</li><li>국내·해외 지부 관리</li><li>교육·신청·발급 연계</li><li>QR 진위 확인</li></ul>
+          <ul class="hero-tags"><li>드론 공익순찰</li><li>전국 17개 시·도 네트워크</li><li>국제지부 확장</li><li>교육·활동·인증 통합</li></ul>
         </div>
         <div class="hero-visual">
           <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
@@ -171,6 +173,8 @@
     </section>
 
     <style id="unified-portal-style">.unified-portal{padding:26px 18px;background:linear-gradient(135deg,#07172b,#102b49);border-top:1px solid rgba(216,177,90,.32);border-bottom:1px solid rgba(216,177,90,.32);color:#eef4ff}.unified-portal .up-wrap{width:min(1120px,100%);margin:auto;display:grid;grid-template-columns:1.4fr .9fr;gap:22px;align-items:center}.unified-portal .up-kicker{color:#d8b15a;font-size:11px;font-weight:900;letter-spacing:.15em}.unified-portal h2{margin:7px 0 9px;color:#fff;font-size:clamp(22px,3vw,34px)}.unified-portal p{margin:0;color:#b8c5d8;line-height:1.7}.unified-portal .up-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.unified-portal .up-tags span{font-size:11px;padding:6px 9px;border:1px solid rgba(216,177,90,.32);border-radius:999px;color:#ead18d}.unified-portal .up-actions{display:grid;gap:9px}.unified-portal .up-btn{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:13px;text-decoration:none;font-weight:900;background:linear-gradient(135deg,#d8b15a,#9b7226);color:#fff}.unified-portal .up-btn.member{background:#173657;border:1px solid rgba(255,255,255,.14)}.unified-portal .up-btn.admin{background:#071426;border:1px solid rgba(216,177,90,.38);color:#ead18d;font-size:13px}.unified-portal .up-btn small{font-weight:500;opacity:.85}@media(max-width:760px){.unified-portal .up-wrap{grid-template-columns:1fr}.unified-portal{padding:23px 14px}}</style><section class="unified-portal"><div class="up-wrap"><div><div class="up-kicker">IPMA INTEGRATED APPLICATION SYSTEM</div><h2>교육·단증·자격증을 한 곳에서 신청하세요</h2><p>경찰무도·태권검도·드론순찰대의 교육과정, 지도자 자격, 학생 급증·단증, 인증도장, 대원·지부 신청을 IPMA 본부 통합 시스템에서 접수하고 진행상태까지 확인할 수 있습니다.</p><div class="up-tags"><span>경찰무도</span><span>태권검도</span><span>드론순찰대</span><span>신청현황 확인</span></div></div><div class="up-actions"><a class="up-btn" href="https://ipma.kr/apply/">통합 신청센터 바로가기 <span>→</span></a><a class="up-btn member" href="https://acts.pe.kr/member-center/signup.html">통합회원 가입 <small>처음 방문한 회원</small></a><a class="up-btn admin" href="https://ipma.kr/admin/revenue-applications.html">본부 관리자 입장 <small>관리자 전용 →</small></a></div></div></section>
+    <section class="idp-command-bar"><div class="container idp-command-grid"><a href="#missions">🚁 6대 공익미션</a><a href="#korea-network">🇰🇷 전국 17개 시·도</a><a href="#global-network">🌐 글로벌 네트워크</a><a href="#education">🎓 교육·훈련</a><a href="#junior">🧭 IDP JUNIOR</a><a href="apply/branch.html">🏢 지부 설립</a></div></section>
+
     <section class="service-bar">
       <div class="container service-grid">
         <a href="search/member-search.html"><span class="service-number">01</span><div><strong>회원 조회</strong><small>대원·지도자·임원 확인</small></div></a>
@@ -192,6 +196,8 @@
       </div>
     </section>
 
+    <section class="section dark-section" id="missions"><div class="container"><div class="section-heading"><p class="section-kicker">IDP PUBLIC SAFETY MISSIONS</p><h2>드론으로 더 넓게 보고, 사람의 힘으로 가까이 지킵니다</h2><p>IDP의 핵심은 드론 비행 자체가 아니라 기술을 지역 안전과 공익활동에 연결하는 것입니다.</p></div><div class="mission-grid"><article class="mission-card"><span class="mission-no">MISSION 01</span><div class="mission-icon">🔎</div><h3>실종자 수색지원</h3><p>넓은 지역을 신속히 탐색하고 지상 수색 인력의 활동을 지원합니다.</p></article><article class="mission-card"><span class="mission-no">MISSION 02</span><div class="mission-icon">🔥</div><h3>산불·산림 감시</h3><p>산림 위험요소를 관찰하고 예방 중심의 안전활동을 지원합니다.</p></article><article class="mission-card"><span class="mission-no">MISSION 03</span><div class="mission-icon">🌊</div><h3>하천·해안 순찰</h3><p>하천, 저수지, 해안 등 넓은 수변지역의 안전 점검을 지원합니다.</p></article><article class="mission-card"><span class="mission-no">MISSION 04</span><div class="mission-icon">🏫</div><h3>학교주변 안전</h3><p>교육기관과 협력하여 어린이·청소년의 안전의식을 높이는 공익활동을 전개합니다.</p></article><article class="mission-card"><span class="mission-no">MISSION 05</span><div class="mission-icon">🎪</div><h3>축제·행사 안전지원</h3><p>대규모 행사에서 현장 안전관찰과 운영지원 활동에 참여합니다.</p></article><article class="mission-card"><span class="mission-no">MISSION 06</span><div class="mission-icon">⛑️</div><h3>재난현장 지원</h3><p>관계기관의 지휘체계와 법규를 준수하며 재난상황의 정보수집과 지원활동을 돕습니다.</p></article></div><div class="hero-actions" style="justify-content:center;margin-top:34px"><a class="btn btn-gold" href="pages/mission.html">IDP 미션 전체 안내</a></div></div></section>
+
     <section class="section dark-section" id="verification">
       <div class="container">
         <div class="section-heading"><p class="section-kicker">INTEGRATED VERIFICATION</p><h2>국제드론순찰대 통합조회 시스템</h2><p>등록된 임원, 지도자, 대원, 지부와 자격증 정보를 전 세계 어디서나 확인할 수 있습니다.</p></div>
@@ -210,29 +216,24 @@
       </div>
     </section>
 
-    <section class="section" id="network">
-      <div class="container">
-        <div class="section-heading"><p class="section-kicker">GLOBAL BRANCH NETWORK</p><h2>국내와 전 세계 지부를 하나의 체계로</h2><p>국가본부, 광역본부, 시·도 지부, 시·군·구 지회와 지역 순찰대를 단계적으로 관리합니다.</p></div>
-        <div class="feature-cards">
-          <article><span>01</span><h3>세계지부 관리</h3><p>국가, 도시, 지부명, 대표자, 승인번호와 활동 상태를 관리합니다.</p></article>
-          <article><span>02</span><h3>국내지부 관리</h3><p>광역본부부터 지역 순찰대까지 일관된 번호 체계로 운영합니다.</p></article>
-          <article><span>03</span><h3>임원·지도자 관리</h3><p>직책, 임기, 교육 이수, 소속과 활동 상태를 확인합니다.</p></article>
-          <article><span>04</span><h3>통합 인물번호</h3><p>IDP·IPMA·WTKF의 단체별 번호를 동일 인물 기준으로 연결합니다.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="korea-network"><div class="container"><div class="section-heading"><p class="section-kicker">KOREA 17 REGIONAL NETWORK</p><h2>대한민국 17개 시·도 조직을 연결합니다</h2><p>광역본부에서 시·군·구 지회와 지역 순찰팀까지, 전국 어디서나 참여할 수 있는 조직망을 단계적으로 구축합니다.</p></div><div class="region-layout"><div class="korea-map-panel"><div class="korea-shape">🇰🇷</div><strong>IDP KOREA NETWORK</strong><p>전국 지역본부·지부·순찰팀을 하나의 운영 기준과 등록체계로 연결합니다.</p><a class="btn btn-gold" href="pages/korea-branches.html">17개 시·도 현황 보기</a></div><div class="region-grid"><div class="region-chip"><b>서울</b><small>SEOUL</small><span class="status">조직 구축</span></div><div class="region-chip"><b>부산</b><small>BUSAN</small><span class="status">조직 구축</span></div><div class="region-chip"><b>대구</b><small>DAEGU</small><span class="status">조직 구축</span></div><div class="region-chip"><b>인천</b><small>INCHEON</small><span class="status">조직 구축</span></div><div class="region-chip"><b>광주</b><small>GWANGJU</small><span class="status">조직 구축</span></div><div class="region-chip"><b>대전</b><small>DAEJEON</small><span class="status">조직 구축</span></div><div class="region-chip"><b>울산</b><small>ULSAN</small><span class="status">조직 구축</span></div><div class="region-chip"><b>세종</b><small>SEJONG</small><span class="status">조직 구축</span></div><div class="region-chip"><b>경기</b><small>GYEONGGI</small><span class="status">조직 구축</span></div><div class="region-chip"><b>강원</b><small>GANGWON</small><span class="status">조직 구축</span></div><div class="region-chip"><b>충북</b><small>CHUNGBUK</small><span class="status">조직 구축</span></div><div class="region-chip"><b>충남</b><small>CHUNGNAM</small><span class="status">조직 구축</span></div><div class="region-chip"><b>전북</b><small>JEONBUK</small><span class="status">조직 구축</span></div><div class="region-chip"><b>전남</b><small>JEONNAM</small><span class="status">조직 구축</span></div><div class="region-chip"><b>경북</b><small>GYEONGBUK</small><span class="status">조직 구축</span></div><div class="region-chip"><b>경남</b><small>GYEONGNAM</small><span class="status">조직 구축</span></div><div class="region-chip"><b>제주</b><small>JEJU</small><span class="status">조직 구축</span></div></div></div></div></section>
+
+    <section class="global-band" id="global-network"><div class="container"><div class="section-heading"><p class="section-kicker">GLOBAL IDP NETWORK</p><h2>국가본부에서 지역 순찰팀까지, 세계로 확장합니다</h2><p>Country Headquarters → National Director → Regional Branch → Local Patrol Team의 국제 조직체계를 목표로 합니다.</p></div><div class="continent-grid"><div class="continent-card"><span>🌏</span><b>ASIA</b><small>아시아</small></div><div class="continent-card"><span>🌍</span><b>EUROPE</b><small>유럽</small></div><div class="continent-card"><span>🌍</span><b>AFRICA</b><small>아프리카</small></div><div class="continent-card"><span>🌎</span><b>N. AMERICA</b><small>북미</small></div><div class="continent-card"><span>🌎</span><b>S. AMERICA</b><small>남미</small></div><div class="continent-card"><span>🌏</span><b>OCEANIA</b><small>오세아니아</small></div></div><div class="hero-actions" style="justify-content:center"><a class="btn btn-outline" href="pages/global-branches.html">세계지부 네트워크 보기</a><a class="btn btn-gold" href="apply/branch.html">해외지부 설립 신청</a></div></div></section>
 
     <section class="section dark-section" id="education">
       <div class="container two-column">
         <figure class="image-card"><img src="assets/images/banners/idp-overview-sections.png" alt="교육 및 훈련"><figcaption>본 이미지는 AI로 제작된 가상의 홍보 이미지입니다.</figcaption></figure>
         <div class="section-copy"><p class="section-kicker">EDUCATION & TRAINING</p><h2>신청부터 교육, 수료와 발급까지</h2><p>드론 안전교육, 조종교육, 순찰 실무, 재난 대응, 행사 안전지원, 지도자 교육과 보수교육을 단계적으로 운영합니다.</p><ul class="check-list"><li>온라인·오프라인 교육 신청</li><li>교육 참가자와 출석 관리</li><li>수료번호 자동 부여</li><li>수료증·자격증 QR 조회</li></ul><a class="text-link" href="pages/education.html">교육과정 전체 보기 →</a></div>
+        <div class="training-levels"><article class="level-card"><span class="level">LEVEL 1</span><h3>IDP BASIC</h3><p>조직 이해 · 드론 안전 · 기본 윤리</p></article><article class="level-card"><span class="level">LEVEL 2</span><h3>DRONE PILOT</h3><p>기초 조종 · 비행 안전 · 시뮬레이션</p></article><article class="level-card"><span class="level">LEVEL 3</span><h3>PATROL OPERATOR</h3><p>순찰 절차 · 기록 · 현장 협업</p></article><article class="level-card"><span class="level">LEVEL 4</span><h3>SEARCH & RESCUE</h3><p>수색지원 · 재난상황 · 안전대응</p></article><article class="level-card"><span class="level">LEVEL 5</span><h3>TEAM LEADER</h3><p>팀 지휘 · 임무계획 · 현장관리</p></article><article class="level-card"><span class="level">LEVEL 6</span><h3>IDP INSTRUCTOR</h3><p>공식 지도자 · 교육운영 · 평가</p></article></div>
       </div>
     </section>
+
+    <section class="section" id="junior"><div class="container"><div class="junior-banner"><div><p class="section-kicker">IDP JUNIOR</p><h2>다음 세대를 위한 드론·안전·봉사 교육</h2><p style="color:var(--muted)">어린이와 청소년이 드론을 단순한 놀이가 아니라 안전기술과 공익봉사의 도구로 이해하도록 돕습니다. 학교·도장·청소년단체와 연계 가능한 교육형 프로그램으로 발전시킵니다.</p><div class="junior-points"><span>드론 기초</span><span>안전교육</span><span>재난교육</span><span>팀워크·봉사</span></div><div class="hero-actions"><a class="btn btn-gold" href="pages/junior.html">IDP JUNIOR 알아보기</a></div></div><div class="korea-map-panel" style="min-height:300px"><div style="font-size:4rem">🧑‍🚀🚁</div><strong>LEARN · FLY · SERVE</strong><p>배우고, 안전하게 조종하고, 지역사회를 섬깁니다.</p></div></div></div></section>
 
     <section class="section" id="activities">
       <div class="container">
         <div class="section-heading"><p class="section-kicker">PATROL & COMMUNITY</p><h2>안전 활동의 미래 모습을 제시합니다</h2><p>야간 도시 순찰, 공원 안전 점검, 행사 안전 지원과 신속 대응을 교육·홍보 콘텐츠로 소개합니다.</p></div>
-        <figure class="wide-image"><img src="assets/images/patrol/idp-patrol-operations.png" alt="순찰 활동"><figcaption>본 이미지는 AI로 생성된 가상의 이미지이며 실제 인물·장소·단체와 관련이 없습니다.</figcaption></figure>
+        <figure class="wide-image"><img src="assets/images/patrol/idp-patrol-operations.png" alt="순찰 활동"><figcaption>본 이미지는 AI로 생성된 가상의 이미지이며 실제 인물·장소·단체와 관련이 없습니다.</figcaption></figure><div class="activity-timeline" style="margin-top:28px"><article class="activity-item"><time>TRAINING</time><h3>정기 드론 훈련</h3><p>조종, 안전, 순찰 실무를 단계적으로 기록합니다.</p></article><article class="activity-item"><time>PATROL</time><h3>지역 공익순찰</h3><p>지역별 안전점검과 봉사활동 사례를 축적합니다.</p></article><article class="activity-item"><time>BRANCH</time><h3>지부 설립·협약</h3><p>전국 및 해외 조직 확대 소식을 공개합니다.</p></article><article class="activity-item"><time>MEDIA</time><h3>사진·영상·언론</h3><p>현장 활동과 교육 콘텐츠를 공식 기록으로 남깁니다.</p></article></div><div class="hero-actions" style="justify-content:center"><a class="btn btn-outline" href="pages/activities.html">활동·미디어 전체 보기</a></div>
       </div>
     </section>
 
