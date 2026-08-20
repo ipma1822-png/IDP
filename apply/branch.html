@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지부 설립 | 국제드론순찰대</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    .subpage { min-height: 100vh; padding: 140px 0 80px; }
-    .sub-card { max-width: 900px; margin: auto; padding: 40px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
-    .sub-card h1 { font-size: clamp(2rem,5vw,3.6rem); margin-top: 0; }
-    .sub-card p { color: var(--muted); }
-  </style>
-</head>
-<body><header class="subpage-header"><div class="container header-inner">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>지부 설립 신청 | 국제드론순찰대</title><link rel="stylesheet" href="../assets/css/style.css"><style>
+    .subpage{min-height:100vh;padding:140px 0 80px}.content-shell{max-width:1120px;margin:auto}.hero-card{padding:48px;background:linear-gradient(135deg,rgba(19,32,50,.95),rgba(8,13,21,.98));border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+    .hero-card h1{font-size:clamp(2.2rem,5vw,4rem);margin:.2em 0}.lead{color:#c2cad5!important;font-size:1.08rem;line-height:1.85;max-width:920px}.eyebrow{color:#d8b15a;font-weight:900;letter-spacing:.13em;font-size:.76rem}.section-block{margin-top:26px;padding:34px;background:var(--panel);border:1px solid var(--line);border-radius:18px}.section-block h2{margin-top:0;font-size:1.65rem}.section-block p,.section-block li{color:var(--muted);line-height:1.85}.grid-2,.grid-3,.grid-4{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.info-card{padding:22px;background:#0a1019;border:1px solid #273040;border-radius:14px}.info-card strong{display:block;color:#f2d77f;margin-bottom:8px}.info-card small{color:#8792a1;line-height:1.6}.number{font-size:2rem;color:#e3bd55;font-weight:900}.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.timeline{display:grid;gap:12px}.timeline .step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:18px;background:#0a1019;border:1px solid #273040;border-radius:14px}.timeline .step span{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid #b99339;color:#e2c36b;font-weight:900}.timeline h3{margin:0 0 6px}.tag{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid #584b2c;color:#e2c36b;font-size:.76rem;font-weight:800}.muted{color:var(--muted)}
+    @media(max-width:820px){.hero-card,.section-block{padding:25px 20px}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.subpage{padding-top:125px}.cta-row .btn{width:100%;justify-content:center;text-align:center}}
+
+.form-wrap{margin-top:26px}.form-section{padding:28px 0;border-top:1px solid var(--line)}.form-section h2{margin:0 0 18px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:8px}.field.wide{grid-column:1/-1}.field span{font-weight:800;color:#e9edf5}.field b{color:#e3bd55}.field input,.field select,.field textarea{width:100%;box-sizing:border-box;background:#090d14;border:1px solid #303747;color:#f5f7fb;border-radius:10px;padding:14px 15px;font:inherit}.field textarea{min-height:110px;resize:vertical}.consent{padding:18px;background:#0a1019;border:1px solid #303747;border-radius:12px;color:#aeb7c4;line-height:1.7}.check{display:flex;gap:9px;align-items:flex-start;margin-top:14px}.form-status{min-height:24px;margin-top:14px;color:#e5c76d}.form-status.error{color:#ff9f9f}.form-status.success{color:#8ee6aa}.submit-btn{border:0;cursor:pointer}.submit-btn:disabled{opacity:.55}@media(max-width:760px){.form-grid{grid-template-columns:1fr}.field.wide{grid-column:auto}}
+</style></head><body><header class="subpage-header"><div class="container header-inner">
 <a class="brand" href="../index.html"><img src="../assets/images/logo/IDP008.png" alt="국제드론순찰대 엠블럼"><span><strong>국제드론순찰대</strong><small>INTERNATIONAL DRONE PATROL</small></span></a>
 <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
 <nav class="main-nav" aria-label="주요 메뉴">
@@ -43,18 +35,19 @@
     <div class="mobile-submenu" data-mobile-panel="verify"><strong>VERIFICATION</strong><a href="../search/member-search.html">대원 조회</a><a href="../search/instructor-search.html">지도자 조회</a><a href="../search/officer-search.html">임원 조회</a><a href="../search/certificate-search.html">자격증 조회</a><a href="../search/branch-search.html">지부 조회</a></div>
   </div>
 </div>
-  <main class="subpage">
-    <div class="container">
-      <section class="sub-card">
-        <p class="section-kicker">INTERNATIONAL DRONE PATROL</p>
-        <h1>국내·해외 지부 설립 신청</h1>
-        <p>국가 또는 지역 단위의 지부 설립을 신청합니다.</p>
-        <div class="public-note">지역과 국가 단위의 안전 활동 거점을 구축하기 위한 지부 설립 및 운영 안내입니다.</div>
-        <a class="btn btn-gold" href="../index.html">메인으로 돌아가기</a>
-      </section>
-    </div>
-  </main>
+  <main class="subpage"><div class="container content-shell"><section class="hero-card"><div class="eyebrow">ESTABLISH A BRANCH</div><h1>국내·해외 지부 설립 신청</h1><p class="lead">대한민국 시·도 및 시·군·구 지역조직, 해외 국가본부·지역지부 설립을 희망하는 분은 아래 신청서를 작성해 주세요. 접수된 내용은 IDP 관리자 통합관리 화면에서 검토됩니다.</p></section>
+<section class="section-block form-wrap"><form id="branchApplicationForm" novalidate>
+<div class="form-section"><h2>01 · 설립 구분</h2><div class="form-grid"><label class="field"><span>설립 유형 <b>*</b></span><select name="branch_type" required><option value="">선택</option><option value="domestic">국내 지부</option><option value="international">해외 지부</option></select></label><label class="field"><span>희망 조직단위 <b>*</b></span><select name="branch_level" required><option value="">선택</option><option>시·도 본부</option><option>시·군·구 지부</option><option>국가본부</option><option>해외 지역지부</option></select></label><label class="field"><span>국가 <b>*</b></span><input name="country" required value="대한민국"></label><label class="field"><span>지역명 <b>*</b></span><input name="region" required placeholder="예: 서울특별시 / Tokyo / California"></label></div></div>
+<div class="form-section"><h2>02 · 신청자 정보</h2><div class="form-grid"><label class="field"><span>성명 <b>*</b></span><input name="applicant_name" required autocomplete="name"></label><label class="field"><span>연락처 <b>*</b></span><input name="phone" required autocomplete="tel"></label><label class="field"><span>이메일 <b>*</b></span><input type="email" name="email" required autocomplete="email"></label><label class="field"><span>현재 직업·소속</span><input name="organization" placeholder="선택 입력"></label><label class="field"><span>드론 관련 자격·경력</span><input name="drone_qualification" placeholder="자격증, 비행경력 등"></label><label class="field"><span>안전·경찰·소방·봉사 경력</span><input name="safety_experience" placeholder="선택 입력"></label></div></div>
+<div class="form-section"><h2>03 · 지부 구축 계획</h2><div class="form-grid"><label class="field"><span>초기 예상 인원</span><input type="number" min="1" name="expected_members" placeholder="예: 10"></label><label class="field"><span>활동 가능 지역</span><input name="service_area" placeholder="예: 서울 전역 / 울산 남구"></label><label class="field wide"><span>설립 목적 및 활동계획 <b>*</b></span><textarea name="plan" required placeholder="지역 안전활동, 드론 교육, 실종수색 지원, 산불감시, 청소년 교육 등 계획을 적어 주세요."></textarea></label><label class="field wide"><span>추가 요청사항</span><textarea name="notes" placeholder="본부에 요청할 지원이나 문의사항이 있으면 작성해 주세요."></textarea></label></div></div>
+<div class="form-section"><h2>04 · 개인정보 및 심사 동의</h2><div class="consent">입력한 정보는 지부 설립 심사와 연락, IDP 조직 운영을 위해 사용됩니다. 승인 전까지 신청 상태이며, 지부 설립과 직책 부여는 본부의 검토 및 승인 후 확정됩니다.</div><label class="check"><input type="checkbox" name="consent" required><span>개인정보 수집·이용 및 지부 설립 심사 절차에 동의합니다. <b>*</b></span></label><div class="cta-row"><button class="btn btn-gold submit-btn" id="branchSubmit" type="submit">지부 설립 신청서 제출</button><a class="btn btn-outline" href="../pages/korea-branches.html">17개 시·도 조직 보기</a></div><p id="branchStatus" class="form-status"></p></div>
+</form></section></div></main>
 <script src="../assets/js/main.js"></script><script src="../assets/js/cross-site-network.js"></script>
 <script src="../assets/js/mobile-nav.js"></script>
-</body>
-</html>
+<script src="../assets/js/version.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+(function(){
+ const SUPABASE_URL='https://ojxarsfaewehwjidwgac.supabase.co', SUPABASE_KEY='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
+ const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY), form=document.getElementById('branchApplicationForm'), status=document.getElementById('branchStatus'), btn=document.getElementById('branchSubmit');
+ form.addEventListener('submit',async function(e){e.preventDefault(); if(!form.reportValidity()) return; btn.disabled=true; status.className='form-status'; status.textContent='신청서를 접수하고 있습니다...'; const f=new FormData(form); const payload={branch_type:f.get('branch_type'),branch_level:f.get('branch_level'),country:f.get('country'),region:f.get('region'),applicant_name:f.get('applicant_name'),phone:f.get('phone'),email:f.get('email'),organization:f.get('organization'),drone_qualification:f.get('drone_qualification'),safety_experience:f.get('safety_experience'),expected_members:f.get('expected_members')?Number(f.get('expected_members')):null,service_area:f.get('service_area'),plan:f.get('plan'),notes:f.get('notes'),status:'pending'}; const {error}=await db.from('idp_branch_applications').insert(payload); if(error){console.error(error);status.className='form-status error';status.textContent='접수에 실패했습니다. 관리자에게 문의하거나 잠시 후 다시 시도해 주세요.';btn.disabled=false;return;} status.className='form-status success'; status.textContent='지부 설립 신청이 정상 접수되었습니다. 본부 검토 후 연락드리겠습니다.'; form.reset(); btn.disabled=false; window.scrollTo({top:status.getBoundingClientRect().top+window.scrollY-180,behavior:'smooth'}); });
+})();</script><script src="../assets/js/version.js"></script></body></html>

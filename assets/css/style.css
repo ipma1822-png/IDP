@@ -268,3 +268,9 @@ figcaption{text-align:center;color:#8993a0;font-size:.78rem;margin-top:9px}
   .mobile-submenu a:hover,.mobile-submenu a:focus{background:rgba(216,168,63,.10);border-color:rgba(216,168,63,.28);color:var(--gold2)}
   .subpage{padding-top:128px!important}
 }
+
+
+/* IDP v3.2 global version marker */
+.idp-version-bar{margin-top:0;padding:14px 18px;background:#05080d;border-top:1px solid rgba(216,177,90,.28);display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;text-align:center;color:#748092;font-size:11px;letter-spacing:.04em}
+.idp-version-bar span{color:#b99748;font-weight:800;letter-spacing:.12em}.idp-version-bar strong{color:#aeb8c7;font-weight:700}
+@media(max-width:640px){.idp-version-bar{padding:12px 10px;font-size:10px;gap:6px}.idp-version-bar span,.idp-version-bar strong{width:100%}}

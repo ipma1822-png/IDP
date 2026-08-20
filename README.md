@@ -1,3 +1,20 @@
+# International Drone Patrol (IDP)
+
+## Current website version
+**IDP v3.2 · ORGANIZATION PLATFORM · 2026.08.20**
+
+### v3.2 additions
+- Version marker on every PC/mobile page
+- Working domestic/international branch establishment application form
+- Supabase branch application + admin review flow
+- 17 metropolitan/provincial branch detail pages
+- Branch officer placeholder structure + admin editing
+- Expanded About IDP and Partners pages
+- Integrated admin hub
+
+### Supabase setup
+Run `admin/SUPABASE-IDP-BRANCH-SETUP.sql` once in Supabase SQL Editor before using branch applications and branch officer management.
+
 # IDP
 International Drone Patrol (IDP)
 
