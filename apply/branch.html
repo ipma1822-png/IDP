@@ -72,10 +72,26 @@
      p_plan:f.get('plan'),
      p_notes:f.get('notes')||null
    };
+   const payload={
+     branch_type:args.p_branch_type,
+     branch_level:args.p_branch_level,
+     country:args.p_country,
+     region:args.p_region,
+     applicant_name:args.p_applicant_name,
+     phone:args.p_phone,
+     email:args.p_email,
+     organization:args.p_organization,
+     drone_qualification:args.p_drone_qualification,
+     safety_experience:args.p_safety_experience,
+     expected_members:args.p_expected_members,
+     service_area:args.p_service_area,
+     plan:args.p_plan,
+     notes:args.p_notes,
+     status:'pending'
+   };
    try{
-     const {data,error}=await db.rpc('submit_idp_branch_application',args);
+     const {error}=await db.from('idp_branch_applications').insert(payload);
      if(error) throw error;
-     console.info('IDP branch application received:',data);
      status.className='form-status success';
      status.textContent='지부 설립 신청이 정상 접수되었습니다. 본부 검토 후 연락드리겠습니다.';
      form.reset();
