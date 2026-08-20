@@ -49,5 +49,42 @@
 (function(){
  const SUPABASE_URL='https://ojxarsfaewehwjidwgac.supabase.co', SUPABASE_KEY='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
  const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY), form=document.getElementById('branchApplicationForm'), status=document.getElementById('branchStatus'), btn=document.getElementById('branchSubmit');
- form.addEventListener('submit',async function(e){e.preventDefault(); if(!form.reportValidity()) return; btn.disabled=true; status.className='form-status'; status.textContent='신청서를 접수하고 있습니다...'; const f=new FormData(form); const payload={branch_type:f.get('branch_type'),branch_level:f.get('branch_level'),country:f.get('country'),region:f.get('region'),applicant_name:f.get('applicant_name'),phone:f.get('phone'),email:f.get('email'),organization:f.get('organization'),drone_qualification:f.get('drone_qualification'),safety_experience:f.get('safety_experience'),expected_members:f.get('expected_members')?Number(f.get('expected_members')):null,service_area:f.get('service_area'),plan:f.get('plan'),notes:f.get('notes'),status:'pending'}; const {error}=await db.from('idp_branch_applications').insert(payload); if(error){console.error(error);status.className='form-status error';status.textContent='접수에 실패했습니다. 관리자에게 문의하거나 잠시 후 다시 시도해 주세요.';btn.disabled=false;return;} status.className='form-status success'; status.textContent='지부 설립 신청이 정상 접수되었습니다. 본부 검토 후 연락드리겠습니다.'; form.reset(); btn.disabled=false; window.scrollTo({top:status.getBoundingClientRect().top+window.scrollY-180,behavior:'smooth'}); });
+ form.addEventListener('submit',async function(e){
+   e.preventDefault();
+   if(!form.reportValidity()) return;
+   btn.disabled=true;
+   status.className='form-status';
+   status.textContent='신청서를 접수하고 있습니다...';
+   const f=new FormData(form);
+   const args={
+     p_branch_type:f.get('branch_type'),
+     p_branch_level:f.get('branch_level'),
+     p_country:f.get('country'),
+     p_region:f.get('region'),
+     p_applicant_name:f.get('applicant_name'),
+     p_phone:f.get('phone'),
+     p_email:f.get('email'),
+     p_organization:f.get('organization')||null,
+     p_drone_qualification:f.get('drone_qualification')||null,
+     p_safety_experience:f.get('safety_experience')||null,
+     p_expected_members:f.get('expected_members')?Number(f.get('expected_members')):null,
+     p_service_area:f.get('service_area')||null,
+     p_plan:f.get('plan'),
+     p_notes:f.get('notes')||null
+   };
+   try{
+     const {data,error}=await db.rpc('submit_idp_branch_application',args);
+     if(error) throw error;
+     console.info('IDP branch application received:',data);
+     status.className='form-status success';
+     status.textContent='지부 설립 신청이 정상 접수되었습니다. 본부 검토 후 연락드리겠습니다.';
+     form.reset();
+     window.scrollTo({top:status.getBoundingClientRect().top+window.scrollY-180,behavior:'smooth'});
+   }catch(error){
+     console.error('IDP branch application error:',error);
+     status.className='form-status error';
+     const code=error&&error.code?(' · 오류코드 '+error.code):'';
+     status.textContent='접수에 실패했습니다'+code+'. 잠시 후 다시 시도해 주세요.';
+   }finally{btn.disabled=false;}
+ });
 })();</script><script src="../assets/js/version.js"></script></body></html>

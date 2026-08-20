@@ -29,3 +29,7 @@ International Drone Patrol (IDP)
 - mission.html / junior.html 신규 페이지
 - education / korea-branches / global-branches / activities / organization 하부페이지 강화
 - 기존 대원·임원·지도자·지부·자격증 조회 및 신청 기능 유지
+
+
+## v3.2.1 지부 신청 HOTFIX
+지부 설립 신청은 보안 RPC `submit_idp_branch_application`을 사용합니다. 배포 후 `admin/SUPABASE-IDP-HOTFIX-v3.2.1.sql`을 Supabase SQL Editor에서 1회 실행하세요.
