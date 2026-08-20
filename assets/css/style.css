@@ -245,3 +245,26 @@ figcaption{text-align:center;color:#8993a0;font-size:.78rem;margin-top:9px}
 @media(max-width:1080px){.idp-command-grid{grid-template-columns:repeat(3,1fr)}.mission-grid,.training-levels{grid-template-columns:repeat(2,1fr)}.region-layout{grid-template-columns:1fr}.continent-grid{grid-template-columns:repeat(3,1fr)}.junior-banner{grid-template-columns:1fr}.activity-timeline{grid-template-columns:repeat(2,1fr)}.org-flow{grid-template-columns:1fr 1fr}.org-flow .org-step:last-child{grid-column:1/-1}}
 @media(max-width:700px){.idp-mobile-strip{display:flex;gap:6px;overflow-x:auto;padding:9px 12px;position:sticky;top:72px;z-index:800;background:#080d14;border-bottom:1px solid var(--line2);scrollbar-width:none}.idp-mobile-strip::-webkit-scrollbar{display:none}.idp-mobile-strip a{flex:0 0 auto;padding:7px 10px;border:1px solid var(--line2);border-radius:999px;font-size:.72rem;font-weight:800}.idp-command-grid,.mission-grid,.training-levels,.region-grid,.continent-grid,.activity-timeline,.junior-points,.sub-grid{grid-template-columns:1fr}.korea-map-panel{min-height:360px}.korea-shape{font-size:6rem}.junior-banner{padding:28px}.org-flow{grid-template-columns:1fr}}
 .two-column>.training-levels{grid-column:1/-1;width:100%}
+
+/* === IDP v3.1 responsive horizontal navigation === */
+.mobile-nav-shell{display:none}
+@media(max-width:700px){
+  .mobile-nav-shell{display:block;position:sticky;top:72px;z-index:850;background:#080d14;border-bottom:1px solid var(--line2);box-shadow:0 8px 22px rgba(0,0,0,.18)}
+  .mobile-nav-scroll{position:relative;padding-right:34px}
+  .mobile-nav-scroll::after{content:"›";position:absolute;right:0;top:0;bottom:0;width:34px;display:grid;place-items:center;font-size:1.45rem;font-weight:900;color:var(--gold2);background:linear-gradient(90deg,rgba(8,13,20,0),#080d14 42%);pointer-events:none;animation:idpArrowPulse 1.8s ease-in-out infinite}
+  @keyframes idpArrowPulse{0%,100%{transform:translateX(0);opacity:.65}50%{transform:translateX(3px);opacity:1}}
+  .mobile-nav-shell .idp-mobile-strip{display:flex;gap:7px;overflow-x:auto;padding:9px 12px;position:static;top:auto;border:0;background:transparent;scrollbar-width:none;scroll-snap-type:x proximity}
+  .mobile-nav-shell .idp-mobile-strip::-webkit-scrollbar{display:none}
+  .mobile-nav-shell .idp-mobile-strip a,.mobile-nav-shell .idp-mobile-strip button{appearance:none;flex:0 0 auto;scroll-snap-align:start;padding:8px 11px;border:1px solid var(--line2);border-radius:999px;background:#0d141e;color:#edf1f5;font-family:inherit;font-size:.73rem;font-weight:850;line-height:1;cursor:pointer;white-space:nowrap}
+  .mobile-nav-shell .idp-mobile-strip button::after{content:"⌄";display:inline-block;margin-left:5px;color:var(--gold2);font-size:.7rem;transition:transform .2s}
+  .mobile-nav-shell .idp-mobile-strip button.active{border-color:rgba(216,168,63,.55);background:rgba(216,168,63,.12);color:var(--gold2)}
+  .mobile-nav-shell .idp-mobile-strip button.active::after{transform:rotate(180deg)}
+  .mobile-submenu-wrap{display:none;padding:4px 12px 12px;background:#080d14}
+  .mobile-submenu-wrap.open{display:block}
+  .mobile-submenu{display:none;grid-template-columns:1fr 1fr;gap:7px;padding:10px;background:#0c131d;border:1px solid var(--line2);border-radius:14px;box-shadow:0 14px 35px rgba(0,0,0,.32)}
+  .mobile-submenu.active{display:grid}
+  .mobile-submenu strong{grid-column:1/-1;padding:2px 6px 7px;color:var(--gold2);font-size:.68rem;letter-spacing:.09em}
+  .mobile-submenu a{display:flex;align-items:center;min-height:42px;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055);color:#e8edf2;font-size:.76rem;font-weight:700;line-height:1.3}
+  .mobile-submenu a:hover,.mobile-submenu a:focus{background:rgba(216,168,63,.10);border-color:rgba(216,168,63,.28);color:var(--gold2)}
+  .subpage{padding-top:128px!important}
+}
