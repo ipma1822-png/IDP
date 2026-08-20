@@ -1,5 +1,5 @@
 (function(){
-  const VERSION='IDP v3.2.3 · PASSWORDLESS ADMIN LOGIN · 2026.08.20';
+  const VERSION='IDP v3.2.4 · IDP ADMIN REDIRECT FIX · 2026.08.20';
   document.addEventListener('DOMContentLoaded',function(){
     if(document.querySelector('.idp-version-bar')) return;
     const bar=document.createElement('div');

@@ -103,7 +103,7 @@
   function showLogin(){$('#loginView').style.display='block';$('#dashboard').classList.remove('show')}
   function showDashboard(){$('#loginView').style.display='none';$('#dashboard').classList.add('show')}
 
-  $('#loginForm').addEventListener('submit',async e=>{e.preventDefault();const email=$('#loginEmail').value.trim().toLowerCase();if(email!==ADMIN_EMAIL){setText($('#loginStatus'),'등록된 관리자 이메일을 입력해 주세요.','error');return}setText($('#loginStatus'),'인증 메일을 보내는 중입니다...');const redirectTo=location.origin+location.pathname;const {error}=await db.auth.signInWithOtp({email,options:{emailRedirectTo:redirectTo,shouldCreateUser:false}});if(error){console.error(error);setText($('#loginStatus'),'인증 메일 발송에 실패했습니다. 잠시 후 다시 시도해 주세요.','error');return}setText($('#loginStatus'),'인증 메일을 보냈습니다. 메일에서 로그인 링크를 눌러 주세요.','success')});
+  $('#loginForm').addEventListener('submit',async e=>{e.preventDefault();const email=$('#loginEmail').value.trim().toLowerCase();if(email!==ADMIN_EMAIL){setText($('#loginStatus'),'등록된 관리자 이메일을 입력해 주세요.','error');return}setText($('#loginStatus'),'인증 메일을 보내는 중입니다...');const redirectTo='https://idp.ai.kr/admin/idp-members.html';const {error}=await db.auth.signInWithOtp({email,options:{emailRedirectTo:redirectTo,shouldCreateUser:false}});if(error){console.error(error);setText($('#loginStatus'),'인증 메일 발송에 실패했습니다. 잠시 후 다시 시도해 주세요.','error');return}setText($('#loginStatus'),'인증 메일을 보냈습니다. 메일에서 로그인 링크를 눌러 주세요.','success')});
   $('#logoutBtn').addEventListener('click',async()=>{await db.auth.signOut();rows=[];render();showLogin()});
   $('#refreshBtn').addEventListener('click',loadRows);
 
