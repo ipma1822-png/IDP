@@ -127,6 +127,7 @@
       .section{padding:82px 0}
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <header class="site-header">
@@ -194,6 +195,74 @@
 
     <style id="unified-portal-style">.unified-portal{padding:26px 18px;background:linear-gradient(135deg,#07172b,#102b49);border-top:1px solid rgba(216,177,90,.32);border-bottom:1px solid rgba(216,177,90,.32);color:#eef4ff}.unified-portal .up-wrap{width:min(1120px,100%);margin:auto;display:grid;grid-template-columns:1.4fr .9fr;gap:22px;align-items:center}.unified-portal .up-kicker{color:#d8b15a;font-size:11px;font-weight:900;letter-spacing:.15em}.unified-portal h2{margin:7px 0 9px;color:#fff;font-size:clamp(22px,3vw,34px)}.unified-portal p{margin:0;color:#b8c5d8;line-height:1.7}.unified-portal .up-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.unified-portal .up-tags span{font-size:11px;padding:6px 9px;border:1px solid rgba(216,177,90,.32);border-radius:999px;color:#ead18d}.unified-portal .up-actions{display:grid;gap:9px}.unified-portal .up-btn{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:13px;text-decoration:none;font-weight:900;background:linear-gradient(135deg,#d8b15a,#9b7226);color:#fff}.unified-portal .up-btn.member{background:#173657;border:1px solid rgba(255,255,255,.14)}.unified-portal .up-btn.admin{background:#071426;border:1px solid rgba(216,177,90,.38);color:#ead18d;font-size:13px}.unified-portal .up-btn small{font-weight:500;opacity:.85}@media(max-width:760px){.unified-portal .up-wrap{grid-template-columns:1fr}.unified-portal{padding:23px 14px}}</style><section class="unified-portal"><div class="up-wrap"><div><div class="up-kicker">IPMA INTEGRATED APPLICATION SYSTEM</div><h2>교육·단증·자격증을 한 곳에서 신청하세요</h2><p>경찰무도·태권검도·드론순찰대의 교육과정, 지도자 자격, 학생 급증·단증, 인증도장, 대원·지부 신청을 IPMA 본부 통합 시스템에서 접수하고 진행상태까지 확인할 수 있습니다.</p><div class="up-tags"><span>경찰무도</span><span>태권검도</span><span>드론순찰대</span><span>신청현황 확인</span></div></div><div class="up-actions"><a class="up-btn" href="https://ipma.kr/apply/">통합 신청센터 바로가기 <span>→</span></a><a class="up-btn member" href="https://acts.pe.kr/member-center/signup.html">통합회원 가입 <small>처음 방문한 회원</small></a><a class="up-btn admin" href="https://ipma.kr/admin/revenue-applications.html">본부 관리자 입장 <small>관리자 전용 →</small></a></div></div></section>
     <section class="idp-command-bar"><div class="container idp-command-grid"><a href="#missions">🚁 6대 공익미션</a><a href="#korea-network">🇰🇷 전국 17개 시·도</a><a href="#global-network">🌐 글로벌 네트워크</a><a href="#education">🎓 교육·훈련</a><a href="#junior">🧭 IDP JUNIOR</a><a href="apply/branch.html">🏢 지부 설립</a></div></section>
+
+
+    <!-- IDP LIVE 3-COLUMN ORGANIZATION BOARD -->
+    <style id="idp-live-board-style">
+      .idp-live-board{padding:46px 18px;background:linear-gradient(180deg,#07101a,#0b1622);border-block:1px solid rgba(216,168,63,.20)}
+      .idp-live-wrap{width:min(1180px,100%);margin:auto}
+      .idp-live-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
+      .idp-live-head small{display:block;color:var(--gold2);font-weight:900;letter-spacing:.14em}
+      .idp-live-head h2{margin:5px 0 0;color:#fff;font-size:clamp(24px,3vw,32px)}
+      .idp-live-status{background:rgba(216,168,63,.10);border:1px solid rgba(216,168,63,.35);border-radius:16px;padding:12px 16px;text-align:right}
+      .idp-live-status span{display:block;font-size:11px;color:#c7d0dc}.idp-live-status b{font-size:18px;color:var(--gold2)}
+      .idp-live-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+      .idp-live-card{background:#0f1a27;border:1px solid rgba(255,255,255,.10);border-radius:18px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.20)}
+      .idp-live-card h3{margin:0;padding:15px 17px;background:#12263c;color:#fff;font-size:15px;border-bottom:1px solid rgba(216,168,63,.25)}
+      .idp-live-card h3 span{color:var(--gold2);margin-right:7px}
+      .idp-scroll{height:205px;overflow:hidden;position:relative}
+      .idp-scroll-track{will-change:transform}.idp-scroll-track.is-moving{animation:idpContinuousScroll var(--scroll-duration,24s) linear infinite}
+      .idp-scroll:hover .idp-scroll-track.is-moving{animation-play-state:paused}
+      @keyframes idpContinuousScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+      .idp-item{min-height:41px;display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px;color:#c8d1dc}
+      .idp-item b{color:#fff;white-space:nowrap}.idp-item em{font-style:normal;color:var(--gold2);font-weight:800;white-space:nowrap}
+      .idp-empty{height:205px;display:grid;place-items:center;padding:26px;color:#8290a0;font-size:12px;text-align:center;line-height:1.8}
+      .idp-notice-board{margin-top:16px;background:#0f1a27;border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:17px 19px}
+      .idp-notice-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.idp-notice-title h3{margin:0;color:#fff}.idp-notice-title a{font-size:12px;color:var(--gold2);font-weight:800}
+      .idp-notice-row{display:grid;grid-template-columns:80px 1fr 100px;gap:10px;padding:10px 4px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}.idp-notice-row b{color:var(--gold2)}.idp-notice-row span{color:#d6dde6}.idp-notice-row time{color:#8290a0;text-align:right}
+      @media(max-width:800px){.idp-live-head{align-items:stretch;flex-direction:column}.idp-live-status{text-align:left}.idp-live-grid{grid-template-columns:1fr}.idp-scroll,.idp-empty{height:170px}.idp-notice-row{grid-template-columns:64px 1fr}.idp-notice-row time{display:none}}
+    </style>
+    <section class="idp-live-board" aria-label="IDP 실시간 조직 현황">
+      <div class="idp-live-wrap">
+        <div class="idp-live-head">
+          <div><small>IDP LIVE ORGANIZATION</small><h2>지금, 국제드론순찰대가 시작되고 있습니다</h2></div>
+          <div class="idp-live-status"><span>현재 운영 단계</span><b>신규 대원 · 지부 모집 중</b></div>
+        </div>
+        <div class="idp-live-grid">
+          <article class="idp-live-card"><h3><span>01</span>신규 대원</h3><div class="idp-scroll"><div class="idp-scroll-track" id="idpMemberTrack"><div class="idp-empty">아직 공개 등록된 대원이 없습니다.<br>첫 신규 대원이 승인되면 이곳에 자동 표시됩니다.</div></div></div></article>
+          <article class="idp-live-card"><h3><span>02</span>신규 지부 · 지구대</h3><div class="idp-scroll"><div class="idp-scroll-track" id="idpBranchTrack"><div class="idp-empty">아직 공개 등록된 지부·지구대가 없습니다.<br>승인된 조직부터 자동 표시됩니다.</div></div></div></article>
+          <article class="idp-live-card"><h3><span>03</span>임원 · 지휘관 임명</h3><div class="idp-scroll"><div class="idp-scroll-track" id="idpOfficerTrack"><div class="idp-empty">새로운 임원·지휘관 임명 소식이 등록되면<br>이곳에 자동 표시됩니다.</div></div></div></article>
+        </div>
+        <div class="idp-notice-board"><div class="idp-notice-title"><h3>공지사항</h3><a href="pages/activities.html">전체보기 →</a></div><div class="idp-notice-row"><b>모집</b><span>국제드론순찰대 신규 대원 및 지역 조직 참여 안내</span><time>상시</time></div><div class="idp-notice-row"><b>지부</b><span>대한민국 17개 시·도 지부 설립 신청 안내</span><time>상시</time></div><div class="idp-notice-row"><b>교육</b><span>IDP 드론 교육·훈련 및 공익미션 참여 안내</span><time>상시</time></div></div>
+      </div>
+    </section>
+    <script>
+    (function(){
+      const url='https://ojxarsfaewehwjidwgac.supabase.co', key='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
+      if(!window.supabase)return;
+      const db=window.supabase.createClient(url,key);
+      function renderContinuous(id,items,empty){
+        const el=document.getElementById(id); if(!el)return;
+        if(!items.length){el.classList.remove('is-moving');el.innerHTML=`<div class="idp-empty">${empty}</div>`;return;}
+        const rows=items.slice(0,10).map(x=>`<div class="idp-item"><b>${x.subject_masked||'IDP'}</b><span>${x.detail||'새로운 소식이 등록되었습니다.'}</span></div>`);
+        const enough=rows.length>=5;
+        el.innerHTML=enough ? rows.concat(rows).join('') : rows.join('');
+        if(enough){el.classList.add('is-moving');el.style.setProperty('--scroll-duration',Math.max(18,rows.length*4)+'s');}
+      }
+      db.rpc('gms_get_public_activity',{p_organization_code:'IDP',p_limit:60}).then(({data,error})=>{
+        if(error||!Array.isArray(data))return;
+        const t=x=>String(x.event_type||'').toLowerCase();
+        const members=data.filter(x=>['new_member','member','join','patrol_member'].some(k=>t(x).includes(k)));
+        const branches=data.filter(x=>['new_branch','branch','station','district'].some(k=>t(x).includes(k)));
+        const officers=data.filter(x=>['appointment','officer','leader','commander','instructor'].some(k=>t(x).includes(k)));
+        const notices=data.filter(x=>['notice','announcement'].some(k=>t(x).includes(k)));
+        renderContinuous('idpMemberTrack',members,'아직 공개 등록된 대원이 없습니다.<br>첫 신규 대원이 승인되면 이곳에 자동 표시됩니다.');
+        renderContinuous('idpBranchTrack',branches,'아직 공개 등록된 지부·지구대가 없습니다.<br>승인된 조직부터 자동 표시됩니다.');
+        renderContinuous('idpOfficerTrack',officers,'새로운 임원·지휘관 임명 소식이 등록되면<br>이곳에 자동 표시됩니다.');
+        if(notices.length){const board=document.querySelector('.idp-notice-board');board.querySelectorAll('.idp-notice-row').forEach(x=>x.remove());notices.slice(0,5).forEach(x=>{const r=document.createElement('div');r.className='idp-notice-row';r.innerHTML=`<b>공지</b><span>${x.detail||x.subject_masked||'IDP 공지사항'}</span><time>${x.created_at?String(x.created_at).slice(0,10):''}</time>`;board.appendChild(r);});}
+      });
+    })();
+    </script>
 
     <section class="service-bar">
       <div class="container service-grid">
