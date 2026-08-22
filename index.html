@@ -223,20 +223,40 @@
       .idp-notice-board{margin-top:16px;background:#0f1a27;border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:17px 19px}
       .idp-notice-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.idp-notice-title h3{margin:0;color:#fff}.idp-notice-title a{font-size:12px;color:var(--gold2);font-weight:800}
       .idp-notice-row{display:grid;grid-template-columns:80px 1fr 100px;gap:10px;padding:10px 4px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}.idp-notice-row b{color:var(--gold2)}.idp-notice-row span{color:#d6dde6}.idp-notice-row time{color:#8290a0;text-align:right}
+
+      .idp-gms-version{display:inline-flex;align-items:center;margin-top:12px;padding:7px 12px;border:1px solid rgba(216,168,63,.48);border-radius:999px;color:#f1cc69;background:rgba(216,168,63,.08);font-size:11px;font-weight:900;letter-spacing:.06em}
+      .idp-live-status em{display:block;margin-top:5px;font-style:normal;font-size:10px;font-weight:800;color:#7f8c9c}
+      .idp-live-status em.is-live{color:#66c781}
+      .idp-network-dashboard{margin:0 0 18px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+      .idp-net-card{min-width:0;background:linear-gradient(180deg,#101d2b,#0d1824);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:15px 14px;box-shadow:0 10px 28px rgba(0,0,0,.16)}
+      .idp-net-card strong{display:block;color:#fff;font-size:clamp(22px,2.2vw,30px);line-height:1.05;margin:7px 0 4px}
+      .idp-net-card span{display:block;color:#f0c964;font-size:10px;font-weight:900;letter-spacing:.10em}
+      .idp-net-card small{display:block;color:#8896a6;font-size:10px;line-height:1.4}
+      .idp-net-card.primary{border-color:rgba(216,168,63,.50);background:linear-gradient(180deg,#17273a,#101b28)}
+      .idp-network-note{margin:-6px 0 16px;color:#728091;font-size:10px;text-align:right}
+      @media(max-width:1050px){.idp-network-dashboard{grid-template-columns:repeat(3,1fr)}}
+      @media(max-width:620px){.idp-network-dashboard{grid-template-columns:repeat(2,1fr)}.idp-network-note{text-align:left}}
+
       @media(max-width:800px){.idp-live-head{align-items:stretch;flex-direction:column}.idp-live-status{text-align:left}.idp-live-grid{grid-template-columns:1fr}.idp-scroll,.idp-empty{height:170px}.idp-notice-row{grid-template-columns:64px 1fr}.idp-notice-row time{display:none}}
     </style>
     <section class="idp-live-board" aria-label="IDP 실시간 조직 현황">
       <div class="idp-live-wrap">
         <div class="idp-live-head">
           <div><small>IDP LIVE ORGANIZATION</small><h2>지금, 국제드론순찰대가 시작되고 있습니다</h2>
-            <div style="display:inline-flex;margin-top:10px;padding:5px 10px;border:1px solid rgba(216,168,63,.55);border-radius:999px;color:var(--gold2);font-size:11px;font-weight:900;letter-spacing:.06em">IDP v3.4.0 · GMS LIVE</div>
-          </div>
-          <div class="idp-live-status">
-            <span>현재 확인·등록된 IDP 대원</span>
-            <b id="idpMemberCount">--명</b>
-            <small id="idpGmsStatus" style="display:block;margin-top:2px;color:#8aa0b7">GMS 연결 확인 중</small>
-          </div>
+    <div class="idp-gms-version">IDP v3.4.1 · GMS GLOBAL NETWORK LIVE</div></div>
+          <div class="idp-live-status"><span>현재 공식 승인 대원</span><b id="idpApprovedCount">0명</b><em id="idpGmsStatus">GMS 연결 확인 중</em></div>
         </div>
+
+        <div class="idp-network-dashboard" aria-label="IPMA 글로벌 네트워크 실시간 현황">
+          <div class="idp-net-card primary"><span>GLOBAL NETWORK</span><strong id="idpNetAll">-</strong><small>전체 네트워크 공개회원</small></div>
+          <div class="idp-net-card"><span>TAEKWONKUMDO</span><strong id="idpNetWTKF">-</strong><small>태권검도 회원</small></div>
+          <div class="idp-net-card"><span>POLICE MARTIAL ARTS</span><strong id="idpNetIPMA">-</strong><small>경찰무도 회원</small></div>
+          <div class="idp-net-card"><span>GLOBAL MEMBERS</span><strong id="idpNetGlobal">-</strong><small>세계회원 승인</small></div>
+          <div class="idp-net-card primary"><span>DRONE PATROL</span><strong id="idpNetIDP">-</strong><small>IDP 공식 승인 대원</small></div>
+          <div class="idp-net-card"><span>COUNTRIES</span><strong>51</strong><small>글로벌 네트워크 국가</small></div>
+        </div>
+        <div class="idp-network-note">※ 각 카드는 독립 지표이며 서로 합산하는 숫자가 아닙니다.</div>
+
         <div class="idp-live-grid">
           <article class="idp-live-card"><h3><span>01</span>신규 대원</h3><div class="idp-scroll"><div class="idp-scroll-track" id="idpMemberTrack"><div class="idp-empty">아직 공개 등록된 대원이 없습니다.<br>첫 신규 대원이 승인되면 이곳에 자동 표시됩니다.</div></div></div></article>
           <article class="idp-live-card"><h3><span>02</span>신규 지부 · 지구대</h3><div class="idp-scroll"><div class="idp-scroll-track" id="idpBranchTrack"><div class="idp-empty">아직 공개 등록된 지부·지구대가 없습니다.<br>승인된 조직부터 자동 표시됩니다.</div></div></div></article>
@@ -247,116 +267,76 @@
     </section>
     <script>
     (function(){
-      const url='https://ojxarsfaewehwjidwgac.supabase.co';
-      const key='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
-      if(!window.supabase){
-        const s=document.getElementById('idpGmsStatus');
-        if(s){s.textContent='GMS 라이브러리 확인 필요';s.style.color='#d6a15b';}
-        return;
-      }
+      const url='https://ojxarsfaewehwjidwgac.supabase.co', key='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
+      if(!window.supabase)return;
       const db=window.supabase.createClient(url,key);
-
-      const escapeHtml=(v)=>String(v??'').replace(/[&<>"']/g,c=>({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-      }[c]));
-
       function renderContinuous(id,items,empty){
-        const el=document.getElementById(id);
-        if(!el)return;
-        el.classList.remove('is-moving');
-        if(!items.length){
-          el.innerHTML=`<div class="idp-empty">${empty}</div>`;
-          return;
-        }
-        const rows=items.slice(0,10).map(x=>{
-          const who=escapeHtml(x.subject_masked||'IDP');
-          const detail=escapeHtml(x.detail||'새로운 소식이 등록되었습니다.');
-          const country=escapeHtml(x.country_code||'');
-          return `<div class="idp-item"><b>${who}</b>${country?`<em>${country}</em>`:''}<span>${detail}</span></div>`;
-        });
+        const el=document.getElementById(id); if(!el)return;
+        if(!items.length){el.classList.remove('is-moving');el.innerHTML=`<div class="idp-empty">${empty}</div>`;return;}
+        const rows=items.slice(0,10).map(x=>`<div class="idp-item"><b>${x.subject_masked||'IDP'}</b><span>${x.detail||'새로운 소식이 등록되었습니다.'}</span></div>`);
         const enough=rows.length>=5;
         el.innerHTML=enough ? rows.concat(rows).join('') : rows.join('');
-        if(enough){
-          el.classList.add('is-moving');
-          el.style.setProperty('--scroll-duration',Math.max(18,rows.length*4)+'s');
-        }
+        if(enough){el.classList.add('is-moving');el.style.setProperty('--scroll-duration',Math.max(18,rows.length*4)+'s');}
       }
+      db.rpc('gms_get_public_activity',{p_organization_code:'IDP',p_limit:60}).then(({data,error})=>{
+        if(error||!Array.isArray(data))return;
+        const t=x=>String(x.event_type||'').toLowerCase();
+        const members=data.filter(x=>['new_member','member','join','patrol_member'].some(k=>t(x).includes(k)));
+        const branches=data.filter(x=>['new_branch','branch','station','district'].some(k=>t(x).includes(k)));
+        const officers=data.filter(x=>['appointment','officer','leader','commander','instructor'].some(k=>t(x).includes(k)));
+        const notices=data.filter(x=>['notice','announcement'].some(k=>t(x).includes(k)));
+        renderContinuous('idpMemberTrack',members,'아직 공개 등록된 대원이 없습니다.<br>첫 신규 대원이 승인되면 이곳에 자동 표시됩니다.');
+        renderContinuous('idpBranchTrack',branches,'아직 공개 등록된 지부·지구대가 없습니다.<br>승인된 조직부터 자동 표시됩니다.');
+        renderContinuous('idpOfficerTrack',officers,'새로운 임원·지휘관 임명 소식이 등록되면<br>이곳에 자동 표시됩니다.');
+        if(notices.length){const board=document.querySelector('.idp-notice-board');board.querySelectorAll('.idp-notice-row').forEach(x=>x.remove());notices.slice(0,5).forEach(x=>{const r=document.createElement('div');r.className='idp-notice-row';r.innerHTML=`<b>공지</b><span>${x.detail||x.subject_masked||'IDP 공지사항'}</span><time>${x.created_at?String(x.created_at).slice(0,10):''}</time>`;board.appendChild(r);});}
+      });
+    })();
+    </script>
 
-      async function loadStats(){
-        const count=document.getElementById('idpMemberCount');
-        const status=document.getElementById('idpGmsStatus');
+
+    <script>
+    (function(){
+      const SUPA_URL='https://ojxarsfaewehwjidwgac.supabase.co';
+      const SUPA_KEY='sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0';
+      if(!window.supabase) return;
+      const db=window.supabase.createClient(SUPA_URL,SUPA_KEY);
+      const n=v=>Number(v||0);
+      const text=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=n(value).toLocaleString('ko-KR')+'명';};
+      const orgTotal=s=>n(s?.legacy_members)+n(s?.global_approved);
+
+      async function loadIDPNetwork(){
         try{
-          const {data,error}=await db.rpc('gms_get_public_stats',{p_organization_code:'IDP'});
-          if(error) throw error;
-          const stat=(data&&typeof data==='object')?data:{};
-          const legacy=Number(stat.legacy_members||0);
-          const approved=Number(stat.global_approved||0);
-          const total=legacy+approved;
-          if(count) count.textContent=total.toLocaleString('ko-KR')+'명';
-          if(status){
-            status.textContent='● REALTIME · GMS 정상 연결';
-            status.style.color='#66c982';
-          }
-        }catch(err){
-          console.warn('IDP GMS stats:',err);
-          if(count) count.textContent='--명';
-          if(status){
-            status.textContent='GMS 연결 확인 필요';
-            status.style.color='#d6a15b';
-          }
+          const [all,wtkf,ipma,idp]=await Promise.all([
+            db.rpc('gms_get_public_stats',{p_organization_code:null}),
+            db.rpc('gms_get_public_stats',{p_organization_code:'WTKF'}),
+            db.rpc('gms_get_public_stats',{p_organization_code:'IPMA'}),
+            db.rpc('gms_get_public_stats',{p_organization_code:'IDP'})
+          ]);
+          if(all.error||wtkf.error||ipma.error||idp.error) throw new Error('stats');
+          const A=Array.isArray(all.data)?(all.data[0]||{}):(all.data||{});
+          const W=Array.isArray(wtkf.data)?(wtkf.data[0]||{}):(wtkf.data||{});
+          const P=Array.isArray(ipma.data)?(ipma.data[0]||{}):(ipma.data||{});
+          const D=Array.isArray(idp.data)?(idp.data[0]||{}):(idp.data||{});
+          const publicTotal=n(A.public_members_total) || (n(A.legacy_unique_people)+n(A.online_members_total));
+          text('idpNetAll',publicTotal);
+          text('idpNetWTKF',orgTotal(W));
+          text('idpNetIPMA',orgTotal(P));
+          text('idpNetGlobal',A.global_approved);
+          text('idpNetIDP',orgTotal(D));
+          text('idpApprovedCount',orgTotal(D));
+          const st=document.getElementById('idpGmsStatus');
+          if(st){st.textContent='● REALTIME · GMS 정상 연결';st.className='is-live';}
+        }catch(e){
+          const st=document.getElementById('idpGmsStatus');
+          if(st){st.textContent='GMS 연결 확인 필요';st.className='';}
         }
       }
-
-      async function loadActivity(){
-        try{
-          const {data,error}=await db.rpc('gms_get_public_activity',{p_organization_code:'IDP',p_limit:60});
-          if(error) throw error;
-          const rows=Array.isArray(data)?data:[];
-          const t=x=>String(x.event_type||'').toLowerCase();
-          const members=rows.filter(x=>['new_member','member','join','patrol_member'].some(k=>t(x).includes(k)));
-          const branches=rows.filter(x=>['new_branch','branch','station','district'].some(k=>t(x).includes(k)));
-          const officers=rows.filter(x=>['appointment','officer','leader','commander','instructor'].some(k=>t(x).includes(k)));
-          const notices=rows.filter(x=>['notice','announcement'].some(k=>t(x).includes(k)));
-
-          renderContinuous('idpMemberTrack',members,'아직 공개 등록된 대원이 없습니다.<br>첫 신규 대원이 승인되면 이곳에 자동 표시됩니다.');
-          renderContinuous('idpBranchTrack',branches,'아직 공개 등록된 지부·지구대가 없습니다.<br>승인된 조직부터 자동 표시됩니다.');
-          renderContinuous('idpOfficerTrack',officers,'새로운 임원·지휘관 임명 소식이 등록되면<br>이곳에 자동 표시됩니다.');
-
-          if(notices.length){
-            const board=document.querySelector('.idp-notice-board');
-            if(board){
-              board.querySelectorAll('.idp-notice-row').forEach(x=>x.remove());
-              notices.slice(0,5).forEach(x=>{
-                const r=document.createElement('div');
-                r.className='idp-notice-row';
-                const d=escapeHtml(x.detail||x.subject_masked||'IDP 공지사항');
-                const dt=escapeHtml(x.occurred_at?String(x.occurred_at).slice(0,10):'');
-                r.innerHTML=`<b>공지</b><span>${d}</span><time>${dt}</time>`;
-                board.appendChild(r);
-              });
-            }
-          }
-        }catch(err){
-          console.warn('IDP GMS activity:',err);
-        }
-      }
-
-      async function refreshIDPLive(){
-        await Promise.all([loadStats(),loadActivity()]);
-      }
-
-      refreshIDPLive();
-
+      loadIDPNetwork();
       try{
-        db.channel('idp-gms-live-v340')
-          .on('postgres_changes',{
-            event:'*',schema:'public',table:'gms_public_activity',
-            filter:'organization_code=eq.IDP'
-          },()=>refreshIDPLive())
+        db.channel('idp-gms-global-live-v341')
+          .on('postgres_changes',{event:'*',schema:'public',table:'gms_public_activity'},()=>loadIDPNetwork())
           .subscribe();
-      }catch(err){
-        console.warn('IDP realtime:',err);
-      }
+      }catch(e){}
     })();
     </script>
 
