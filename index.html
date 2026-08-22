@@ -380,5 +380,6 @@
 <script>
 (async()=>{try{const db=window.supabase.createClient('https://ojxarsfaewehwjidwgac.supabase.co','sb_publishable_ZoAZrV5rDmYDLxhXlnEXCw_lPqJfin0');const {data}=await db.from('idp_board_posts').select('id,title,published_at,created_at').eq('board_type','notice').eq('is_published',true).order('is_pinned',{ascending:false}).order('published_at',{ascending:false}).limit(5);if(data&&data.length){const b=document.querySelector('.idp-notice-board');b.querySelectorAll('.idp-notice-row').forEach(x=>x.remove());data.forEach(x=>{const r=document.createElement('a');r.className='idp-notice-row';r.href='community/post.html?id='+encodeURIComponent(x.id);r.style.textDecoration='none';const d=(x.published_at||x.created_at||'').slice(0,10);r.innerHTML='<b>공지</b><span>'+String(x.title||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))+'</span><time>'+d+'</time>';b.appendChild(r);});}}catch(e){console.warn(e)}})();
 </script>
+<script src="assets/js/idp-global-lang.js"></script>
 </body>
 </html>
