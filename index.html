@@ -229,7 +229,7 @@
       <div class="idp-live-wrap">
         <div class="idp-live-head">
           <div><small>IDP LIVE ORGANIZATION</small><h2>지금, 국제드론순찰대가 시작되고 있습니다</h2></div>
-          <div class="idp-live-status"><span>현재 운영 단계</span><b>신규 대원 · 지부 모집 중</b></div>
+          <div class="idp-live-status"><span>현재 운영 단계</span><b>공식 승인 대원 <strong id="idpMemberCount">0명</strong> · 지부 모집 중</b></div>
         </div>
         <div class="idp-live-grid">
           <article class="idp-live-card"><h3><span>01</span>신규 대원</h3><div class="idp-scroll"><div class="idp-scroll-track" id="idpMemberTrack"><div class="idp-empty">아직 공개 등록된 대원이 없습니다.<br>첫 신규 대원이 승인되면 이곳에 자동 표시됩니다.</div></div></div></article>
@@ -252,8 +252,10 @@
         el.innerHTML=enough ? rows.concat(rows).join('') : rows.join('');
         if(enough){el.classList.add('is-moving');el.style.setProperty('--scroll-duration',Math.max(18,rows.length*4)+'s');}
       }
-      db.rpc('gms_get_public_activity',{p_organization_code:'IDP',p_limit:60}).then(({data,error})=>{
-        if(error||!Array.isArray(data))return;
+      async function loadIDPLive(){
+        const [sr,ar]=await Promise.all([db.rpc('gms_get_public_stats',{p_organization_code:'IDP'}),db.rpc('gms_get_public_activity',{p_organization_code:'IDP',p_limit:60})]);
+        if(!sr.error&&sr.data){const total=Number(sr.data.legacy_members||0)+Number(sr.data.approved_applications||0);const c=document.getElementById('idpMemberCount');if(c)c.textContent=total.toLocaleString('ko-KR')+'명';}
+        const data=ar.data,error=ar.error;if(error||!Array.isArray(data))return;
         const t=x=>String(x.event_type||'').toLowerCase();
         const members=data.filter(x=>['new_member','member','join','patrol_member'].some(k=>t(x).includes(k)));
         const branches=data.filter(x=>['new_branch','branch','station','district'].some(k=>t(x).includes(k)));
@@ -263,7 +265,8 @@
         renderContinuous('idpBranchTrack',branches,'아직 공개 등록된 지부·지구대가 없습니다.<br>승인된 조직부터 자동 표시됩니다.');
         renderContinuous('idpOfficerTrack',officers,'새로운 임원·지휘관 임명 소식이 등록되면<br>이곳에 자동 표시됩니다.');
         if(notices.length){const board=document.querySelector('.idp-notice-board');board.querySelectorAll('.idp-notice-row').forEach(x=>x.remove());notices.slice(0,5).forEach(x=>{const r=document.createElement('div');r.className='idp-notice-row';r.innerHTML=`<b>공지</b><span>${x.detail||x.subject_masked||'IDP 공지사항'}</span><time>${x.created_at?String(x.created_at).slice(0,10):''}</time>`;board.appendChild(r);});}
-      });
+      }
+      loadIDPLive();try{db.channel('idp-gms-live').on('postgres_changes',{event:'INSERT',schema:'public',table:'gms_public_activity',filter:'organization_code=eq.IDP'},loadIDPLive).subscribe();}catch(e){console.warn('IDP GMS Realtime:',e)}
     })();
     </script>
 
