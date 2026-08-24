@@ -243,7 +243,7 @@
       <div class="idp-live-wrap">
         <div class="idp-live-head">
           <div><small>IDP LIVE ORGANIZATION</small><h2>지금, 국제드론순찰대가 시작되고 있습니다</h2>
-    <div class="idp-gms-version">IDP v3.4.2 · HOME LINK STANDARD · GMS LIVE</div></div>
+    <div class="idp-gms-version">IDP v3.4.3 · GATEWAY STATS · GMS LIVE</div></div>
           <div class="idp-live-status"><span>현재 공식 승인 대원</span><b id="idpApprovedCount">0명</b><em id="idpGmsStatus">GMS 연결 확인 중</em></div>
         </div>
 
@@ -303,28 +303,17 @@
       const db=window.supabase.createClient(SUPA_URL,SUPA_KEY);
       const n=v=>Number(v||0);
       const text=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=n(value).toLocaleString('ko-KR')+'명';};
-      const orgTotal=s=>n(s?.legacy_members)+n(s?.global_approved);
-
       async function loadIDPNetwork(){
         try{
-          const [all,wtkf,ipma,idp]=await Promise.all([
-            db.rpc('gms_get_public_stats',{p_organization_code:null}),
-            db.rpc('gms_get_public_stats',{p_organization_code:'WTKF'}),
-            db.rpc('gms_get_public_stats',{p_organization_code:'IPMA'}),
-            db.rpc('gms_get_public_stats',{p_organization_code:'IDP'})
-          ]);
-          if(all.error||wtkf.error||ipma.error||idp.error) throw new Error('stats');
-          const A=Array.isArray(all.data)?(all.data[0]||{}):(all.data||{});
-          const W=Array.isArray(wtkf.data)?(wtkf.data[0]||{}):(wtkf.data||{});
-          const P=Array.isArray(ipma.data)?(ipma.data[0]||{}):(ipma.data||{});
-          const D=Array.isArray(idp.data)?(idp.data[0]||{}):(idp.data||{});
-          const publicTotal=n(A.public_members_total) || (n(A.legacy_unique_people)+n(A.online_members_total));
-          text('idpNetAll',publicTotal);
-          text('idpNetWTKF',orgTotal(W));
-          text('idpNetIPMA',orgTotal(P));
+          const stats=await db.rpc('gms_get_gateway_stats_v1');
+          if(stats.error) throw stats.error;
+          const A=Array.isArray(stats.data)?(stats.data[0]||{}):(stats.data||{});
+          text('idpNetAll',A.public_members_total);
+          text('idpNetWTKF',A.wtkf_members_total);
+          text('idpNetIPMA',A.ipma_members_total);
           text('idpNetGlobal',A.global_approved);
-          text('idpNetIDP',orgTotal(D));
-          text('idpApprovedCount',orgTotal(D));
+          text('idpNetIDP',A.idp_members_total);
+          text('idpApprovedCount',A.idp_members_total);
           const st=document.getElementById('idpGmsStatus');
           if(st){st.textContent='● REALTIME · GMS 정상 연결';st.className='is-live';}
         }catch(e){
