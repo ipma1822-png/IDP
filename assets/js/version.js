@@ -1,10 +1,1 @@
-(function(){
-  const VERSION='IDP v4.2.0 · CENTER RANKING · 2026.08.28';
-  document.addEventListener('DOMContentLoaded',function(){
-    if(document.querySelector('.idp-version-bar')) return;
-    const bar=document.createElement('div');
-    bar.className='idp-version-bar';
-    bar.innerHTML='<span>INTERNATIONAL DRONE PATROL</span><strong>'+VERSION+'</strong>';
-    document.body.appendChild(bar);
-  });
-})();
+(()=>{const V='IDP v4.5.0 · VOLUNTEER QR & 1365 · 2026.08.28';document.querySelectorAll('[data-idp-version]').forEach(e=>e.textContent=V);window.IDP_VERSION=V;})();
