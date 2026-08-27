@@ -1,5 +1,5 @@
 (function(){
-  const VERSION='IDP v4.1.0 · OFFICIAL CENTER ACTIVITY · 2026.08.28';
+  const VERSION='IDP v4.2.0 · CENTER RANKING · 2026.08.28';
   document.addEventListener('DOMContentLoaded',function(){
     if(document.querySelector('.idp-version-bar')) return;
     const bar=document.createElement('div');
