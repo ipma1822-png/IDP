@@ -1,5 +1,5 @@
 (function(){
-  const VERSION='IDP v3.4.2 · SIMPLE JOIN + KAKAO LOGIN · 2026.08.25';
+  const VERSION='IDP v4.0.0 · OFFICIAL LOCAL CENTER · 2026.08.28';
   document.addEventListener('DOMContentLoaded',function(){
     if(document.querySelector('.idp-version-bar')) return;
     const bar=document.createElement('div');
