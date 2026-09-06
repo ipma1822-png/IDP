@@ -1,1 +1,1 @@
-(()=>{const V='IDP v4.8.0 · NATIONAL STATS & PUBLIC PROJECT · 2026.08.28';document.querySelectorAll('[data-idp-version]').forEach(e=>e.textContent=V);window.IDP_VERSION=V;})();
+(()=>{const V='IDP v4.8.1 · LIVE EMBLEM v1.0 · 2026.09.06';document.querySelectorAll('[data-idp-version]').forEach(e=>e.textContent=V);window.IDP_VERSION=V;const s=document.createElement('script');s.src='assets/js/live-emblem.js';s.defer=true;document.head.appendChild(s);})();
